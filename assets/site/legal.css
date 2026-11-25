@@ -17,3 +17,5 @@
 .legal-nav { position: fixed; inset: 0 0 auto; height: var(--nav); background: var(--bg); border-bottom: 1px solid color-mix(in oklab, var(--ink) 12%, transparent); z-index: 10; }
 .legal-nav .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
 @media (max-width: 639px) { .legal .box dl { grid-template-columns: 1fr; } .legal .box dt { margin-top: var(--s-2); } }
+.legal .dl { list-style: none; padding: 0; display: grid; gap: var(--s-4); margin: var(--s-6) 0; }
+.legal .dl li { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; }

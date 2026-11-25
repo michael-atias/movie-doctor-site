@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl" data-type="software" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.paddle.com https://*.paddle.com https://*.profitwell.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.paddle.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.paddle.com https://*.profitwell.com; connect-src 'self' https://*.paddle.com https://*.profitwell.com; frame-src https://*.paddle.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://*.paddle.com; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.paypal.com https://*.paypal.com https://*.paypalobjects.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.paypal.com https://*.paypalobjects.com; connect-src 'self' https://moviedoctor-api.michael-atias.co.il https://*.paypal.com; frame-src https://*.paypal.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Movie Doctor: תיקון סנכרון לסרטונים שלך</title>
@@ -135,7 +135,7 @@
     </nav>
     <div class="nav__actions">
       <a class="nav__link" href="en.html" hreflang="en" lang="en">English</a>
-      <a class="btn btn--primary" href="#price" data-buy>לקנות את Movie Doctor</a>
+      <a class="btn btn--primary" href="#price">לקנות את Movie Doctor</a>
     </div>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-label="תפריט">
       <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -150,7 +150,7 @@
         <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>ל-Windows 10 ו-11, עובד בלי אינטרנט</p>
         <h1 id="hero-h">מתקן סנכרון כתוביות וקול בסרטונים</h1>
         <p class="hero__lead">גוררים סרטון שצילמת או שבבעלותך, או תיקייה שלמה. Movie Doctor מקשיב לדיבור, מוצא את הדקה שבה הכתוביות או הקול זזים, ושומר עותק מתוקן.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#price" data-buy>לקנות את Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#season">לראות בדיקה אמיתית</a></div>
+        <div class="btn-row"><a class="btn btn--primary" href="#price">לקנות את Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#season">לראות בדיקה אמיתית</a></div>
         <dl class="hero-facts">
           <div><dt>מחיר</dt><dd>39 דולר, פעם אחת</dd></div>
           <div><dt>סרטון של שעתיים</dt><dd>כ-4 דקות<sup><a href="#note-1" aria-label="הערה 1">1</a></sup></dd></div>
@@ -377,10 +377,10 @@
       <div class="grid">
         <div class="span-4 stack-4">
           <h2 id="price-h">מחיר אחד. <span class="muted">שלך לתמיד.</span></h2>
-          <p>Pay once and keep every 1.x update. כל רישיון כולל בדיקת תיקייה, סנכרון כתוביות שורה-שורה, תמלול שורות חסרות ותוכנה בעברית ובאנגלית.</p>
+          <p>משלמים פעם אחת ומקבלים את כל העדכונים של גרסה 1. כל רישיון כולל בדיקת תיקייה, סנכרון כתוביות שורה-שורה, תמלול שורות חסרות ותוכנה בעברית ובאנגלית.</p>
           <div class="after-pay">
-            <p>1. Paddle, המשווק שלנו, שולח קבלה במייל.</p>
-            <p>2. תוך יום עסקים אחד נשלח לך במייל קישור הורדה ומפתח רישיון.</p>
+            <p>1. משלמים ב-PayPal או בכרטיס אשראי.</p>
+            <p>2. מפתח הרישיון וקישור ההורדה מגיעים במייל תוך דקות.</p>
             <p>3. מדביקים את המפתח בתוכנה, וזהו.</p>
           </div>
           <a class="link" href="terms.html#refunds">לקרוא את מדיניות ההחזרים</a>
@@ -389,12 +389,24 @@
           <h3>Movie Doctor Pro</h3>
           <p class="muted">רישיון לכל החיים, לאדם אחד</p>
           <p class="price"><span class="t-stat">39 דולר</span> <span class="t-small muted">תשלום אחד, כולל מע״מ</span></p>
-          <a class="btn btn--primary" href="#price" data-buy>לקנות את Movie Doctor</a>
+          <div class="pay" data-pay>
+            <button class="btn btn--primary" type="button" data-paypal-open>תשלום ב-PayPal או בכרטיס</button>
+            <div class="pay__paypal" id="paypal-buttons" hidden></div>
+            <!-- Bit: shown once the Bit business number is set (worker BIT_PHONE) -->
+            <button class="btn btn--secondary" type="button" data-bit-open hidden>תשלום בביט</button>
+            <form class="pay__bit" data-bit-form hidden novalidate>
+              <div class="field"><label for="bit-name">שם</label><input id="bit-name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="bit-email">מייל לקבלת מפתח הרישיון</label><input id="bit-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+              <button class="btn btn--secondary" type="submit">קבל קוד לתשלום בביט</button>
+            </form>
+            <p class="pay__bit-result" data-bit-result hidden></p>
+            <p class="pay__msg t-small" data-pay-msg role="status"></p>
+          </div>
           <ul class="checks">
             <li>כל היכולות בחינם ל-14 יום</li>
             <li>גם אחר כך הבדיקה נשארת בחינם</li>
             <li>החזר מלא תוך 14 יום מהרכישה</li>
-            <li>תשלום בכרטיס אשראי או ב-Google Pay</li>
+            <li>PayPal או כל כרטיס אשראי</li>
           </ul>
         </article>
         <article class="card card--plan span-4 start-9">
@@ -450,7 +462,7 @@ v הקובץ תקין</pre>
         <h2 id="close-h">די להזיז כתוביות ביד</h2>
         <p class="t-small muted">39 דולר פעם אחת, כולל מע״מ. החזר מלא תוך 14 יום.</p>
       </div>
-      <a class="btn btn--primary btn--xl btn--wide" href="#price" data-buy>לקנות את Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      <a class="btn btn--primary btn--xl btn--wide" href="#price">לקנות את Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
     <div class="closing__links">
       <div class="grid">

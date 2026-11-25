@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" data-type="software" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.paddle.com https://*.paddle.com https://*.profitwell.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.paddle.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.paddle.com https://*.profitwell.com; connect-src 'self' https://*.paddle.com https://*.profitwell.com; frame-src https://*.paddle.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://*.paddle.com; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.paypal.com https://*.paypal.com https://*.paypalobjects.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.paypal.com https://*.paypalobjects.com; connect-src 'self' https://moviedoctor-api.michael-atias.co.il https://*.paypal.com; frame-src https://*.paypal.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Movie Doctor: sync repair for your videos</title>
@@ -135,7 +135,7 @@
     </nav>
     <div class="nav__actions">
       <a class="nav__link" href="index.html" hreflang="he" lang="he">עברית</a>
-      <a class="btn btn--primary" href="#price" data-buy>Buy Movie Doctor</a>
+      <a class="btn btn--primary" href="#price">Buy Movie Doctor</a>
     </div>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
       <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -150,7 +150,7 @@
         <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>For Windows 10 and 11, works offline</p>
         <h1 id="hero-h">Fixes subtitle and sound sync in your videos</h1>
         <p class="hero__lead">Drop in a video you made or own, or a whole folder. Movie Doctor listens to the speech, finds the minute the subtitles or the sound slip, and saves a fixed copy.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#price" data-buy>Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#season">See a real check</a></div>
+        <div class="btn-row"><a class="btn btn--primary" href="#price">Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#season">See a real check</a></div>
         <dl class="hero-facts">
           <div><dt>Price</dt><dd>$39 once</dd></div>
           <div><dt>A 2-hour video</dt><dd>about 4 min<sup><a href="#note-1" aria-label="Note 1">1</a></sup></dd></div>
@@ -379,8 +379,8 @@
           <h2 id="price-h">One price. <span class="muted">Yours for good.</span></h2>
           <p>Pay once and keep every 1.x update. Every licence includes the folder check, line-by-line subtitle sync, missing-line transcription and the Hebrew and English app.</p>
           <div class="after-pay">
-            <p>1. Paddle, our reseller, emails the receipt.</p>
-            <p>2. We email the download link and your licence key within one working day.</p>
+            <p>1. Pay with PayPal or a credit card.</p>
+            <p>2. Your licence key and download link arrive by e-mail within minutes.</p>
             <p>3. Paste the key into the app. Done.</p>
           </div>
           <a class="link" href="terms.html#refunds-en">Read the refund policy</a>
@@ -389,12 +389,24 @@
           <h3>Movie Doctor Pro</h3>
           <p class="muted">Lifetime licence for one person</p>
           <p class="price"><span class="t-stat">$39</span> <span class="t-small muted">one payment, VAT included</span></p>
-          <a class="btn btn--primary" href="#price" data-buy>Buy Movie Doctor</a>
+          <div class="pay" data-pay>
+            <button class="btn btn--primary" type="button" data-paypal-open>Pay with PayPal or card</button>
+            <div class="pay__paypal" id="paypal-buttons" hidden></div>
+            <!-- Bit: shown once the Bit business number is set (worker BIT_PHONE) -->
+            <button class="btn btn--secondary" type="button" data-bit-open hidden>Pay with Bit (Israel)</button>
+            <form class="pay__bit" data-bit-form hidden novalidate>
+              <div class="field"><label for="bit-name">Name</label><input id="bit-name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="bit-email">E-mail for the licence key</label><input id="bit-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+              <button class="btn btn--secondary" type="submit">Get my Bit code</button>
+            </form>
+            <p class="pay__bit-result" data-bit-result hidden></p>
+            <p class="pay__msg t-small" data-pay-msg role="status"></p>
+          </div>
           <ul class="checks">
             <li>All features free for 14 days</li>
             <li>Checking stays free after that</li>
             <li>Full refund within 14 days of purchase</li>
-            <li>Pay by card or Google Pay</li>
+            <li>PayPal or any credit card</li>
           </ul>
         </article>
         <article class="card card--plan span-4 start-9">
@@ -450,7 +462,7 @@ v The file is healthy</pre>
         <h2 id="close-h">Stop nudging subtitles by hand</h2>
         <p class="t-small muted">$39 once, VAT included. Full refund within 14 days.</p>
       </div>
-      <a class="btn btn--primary btn--xl btn--wide" href="#price" data-buy>Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      <a class="btn btn--primary btn--xl btn--wide" href="#price">Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
     <div class="closing__links">
       <div class="grid">

@@ -146,3 +146,14 @@
 .copied__head { display: flex; justify-content: space-between; color: #9aa0ad; font-size: 12px; padding-bottom: 10px; border-bottom: 1px solid #22262f; margin-bottom: 10px; }
 .copied pre { margin: 0; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; white-space: pre-wrap; color: #e8eaf0; }
 @media (max-width: 639px) { #features .card .at-corner { width: auto; right: 16px; } }
+
+/* paying: PayPal, card through PayPal, Bit */
+.pay { display: grid; gap: var(--s-3); }
+.pay .btn { width: 100%; }
+.pay__bit { display: grid; gap: var(--s-3); }
+.pay__bit .field { display: grid; gap: var(--s-1); }
+.pay__bit label { font-size: 14px; }
+.pay__bit input { height: 48px; padding: 0 var(--s-4); font: inherit; font-size: 16px; border: 1px solid color-mix(in oklab, var(--ink) 25%, transparent); border-radius: var(--r-sm); background: var(--bg); color: var(--ink); }
+.pay__bit-result { margin: 0; padding: var(--s-4); border-radius: var(--r-md); background: var(--bg); line-height: 1.7; }
+.pay__msg:empty { display: none; }
+.pay__paypal { min-height: 48px; }
