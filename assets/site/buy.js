@@ -78,3 +78,13 @@ bitForm?.addEventListener('submit', async (e) => {
     out.hidden = false; bitForm.hidden = true; say('');
   } catch { say(T.fail); }
 });
+
+/* shekel estimate from our API (Bank of Israel rate); keeps the printed number if anything fails */
+(() => {
+  const els = document.querySelectorAll('[data-ils]');
+  if (!els.length) return;
+  fetch(API + '/api/rate').then(r => r.ok ? r.json() : null).then(d => {
+    const n = Number(d && d.ils);
+    if (Number.isFinite(n) && n > 50 && n < 400) els.forEach(el => { el.textContent = String(Math.round(n)); });
+  }).catch(() => {});
+})();
