@@ -73,7 +73,7 @@
   @media (min-width: 1024px) and (max-width: 1279px) { #features .panel { --p-h: 220px; }  #price .hw-logos { display: none; } }
   @media (max-width: 639px) {
     .hero__media .at-corner { --ax: 16px; --ay: 20px; width: 340px; }
-    #features .panel { --p-h: 190px; }
+    #features .panel { --p-h: 176px; }
     #features .card.is-phone-skip { display: none; }
     #how { --hm: 2 } #price { --hm: 2 } #faq { --hm: 2 }
     #how .panel { --p-h: 180px; }
@@ -159,18 +159,25 @@
       </div>
       <div class="hero__media span-6 start-7" data-visual data-fx="silk-folds" data-fx-seed="7" data-ui-pause-host>
         <div class="stage">
-          <div class="at-corner" data-m-loop style="--m-cycle: 4s">
-            <div class="mdw" role="img" aria-label="תוצאת הבדיקה של Movie Doctor לסרטון: הכתוביות זזות ב-26:53, 17 שורות חסרות בכתוביות, הקול תואם לשפתיים, נלחץ תקן והעותק המתוקן נשמר">
-              <div class="mdw__bar"><span class="mdw__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="mdw__name">Movie Doctor</span><span class="mdw__file">interview.mp4</span></div>
-              <div class="mdw__body">
-                <div class="mdw__verdict">מצאנו 2 בעיות שאפשר לתקן</div>
-                <div class="mdw__sub">נבדקו כתוביות: עברית (מובנות)</div>
-                <div class="mdw__card is-1"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">הכתוביות זזות ב-26:53</span><br><span class="mdw__d">מכאן הן מופיעות 32.8 שנ׳ מוקדם מדי. כל שורה חוזרת למשפט שלה.</span></span></div>
-                <div class="mdw__card is-2"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">17 שורות חסרות בכתוביות</span><br><span class="mdw__d">הן מתומללות, מתורגמות ומתווספות <mark>בצהוב</mark>.</span></span></div>
-                <div class="mdw__card is-3"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">הקול תואם לשפתיים</span><br><span class="mdw__d">נמדד ב-3 סצנות שמסכימות.</span></span></div>
-                <div class="mdw__card is-4"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">הקובץ תקין</span><br><span class="mdw__d">בלי נזק ובלי שגיאות זמנים.</span></span></div>
+          <div class="at-corner hp" data-m-loop style="--m-cycle: 4s; --m-still: 0.92">
+            <div class="hp__player" role="img" aria-label="לפני: הכתובית מופיעה 2.4 שניות לפני שהדובר מדבר. Movie Doctor מוצא את זה ולוחצים תקן. אחרי: הכתובית מופיעה בדיוק כשהוא מדבר.">
+              <div class="hp__screen">
+                <span class="hp__person hp__person--a" aria-hidden="true"><i class="hp__mouth"></i></span>
+                <span class="hp__person hp__person--b" aria-hidden="true"><i class="hp__mouth"></i></span>
+                <span class="hp__tag hp__tag--bad">הכתובית מקדימה ב-2.4 שנ׳</span>
+                <span class="hp__tag hp__tag--ok">בזמן ✓</span>
+                <span class="hp__sub hp__sub--early">אז איך הערוץ התחיל?</span>
+                <span class="hp__sub hp__sub--ok">אז איך הערוץ התחיל?</span>
               </div>
-              <div class="mdw__foot"><span class="mdw__btn">תקן</span><span class="mdw__ghost">בדיקה מהירה</span><span class="mdw__saved">נשמר interview.fixed.mp4</span></div>
+              <div class="hp__bar" aria-hidden="true"><span class="hp__play"></span><span class="hp__track"><i></i></span><span class="hp__time">26:53</span></div>
+            </div>
+            <div class="mdw hp__app" aria-hidden="true">
+              <div class="mdw__bar"><span class="mdw__dots"><i></i><i></i><i></i></span><span class="mdw__name">Movie Doctor</span><span class="mdw__file">interview.mp4</span></div>
+              <div class="hp__row">
+                <span class="hp__find"><span class="mdw__ico mdw__ico--bad">✕</span><span><b>הכתוביות מקדימות ב-2.4 שנ׳</b><br><span class="mdw__d">מ-26:53 ועד הסוף</span></span></span>
+                <span class="hp__done"><span class="mdw__ico mdw__ico--ok">✓</span><span><b>תוקן. כל השורות חזרו למקום</b><br><span class="mdw__d">נשמר interview.fixed.mp4</span></span></span>
+                <span class="mdw__btn hp__fix">תקן</span>
+              </div>
             </div>
           </div>
         </div>
@@ -278,7 +285,7 @@
       <div class="grid">
         <article class="card card--row card--open span-4">
           <h3>מחזיר את הקול לשפתיים</h3>
-          <p>כשהקול מקדים או מאחר לתנועת הפה, הוא מודד בכמה ומחזיר את הקול למקום. כדי למדוד צריך שיראו פנים או כתוביות על המסך.</p>
+          <p>כשרואים פנים או כתוביות על המסך, הוא מודד בכמה הקול זז ומחזיר אותו למקום.</p>
           <div class="panel" data-fx="grain-gradient" data-fx-seed="23" data-fx-params='{"drift":0}'>
             <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
               <div class="piece lips">
@@ -401,6 +408,7 @@
               <p class="t-small muted">השם והמייל משמשים רק לשליחת הרישיון. <a href="privacy.html">פרטיות</a></p>
             </form>
             <p class="pay__bit-result" data-bit-result hidden></p>
+            <p class="pay__trust t-small"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="currentColor"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>תשלום מאובטח דרך PayPal. החזר מלא תוך 14 יום.</p>
             <p class="pay__msg t-small" data-pay-msg role="status"></p>
           </div>
           <ul class="checks">
@@ -484,6 +492,10 @@ v הקובץ תקין</pre>
   </div>
 </footer>
 
+<!-- phone: the buy button stays one tap away once the hero has scrolled off (system.js shows and hides it) -->
+<nav class="actionbar" aria-label="פעולות מהירות">
+  <a class="btn btn--primary" href="#price">לקנות את Movie Doctor</a>
+</nav>
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>

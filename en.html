@@ -73,7 +73,7 @@
   @media (min-width: 1024px) and (max-width: 1279px) { #features .panel { --p-h: 220px; }  #price .hw-logos { display: none; } }
   @media (max-width: 639px) {
     .hero__media .at-corner { --ax: 16px; --ay: 20px; width: 340px; }
-    #features .panel { --p-h: 190px; }
+    #features .panel { --p-h: 176px; }
     #features .card.is-phone-skip { display: none; }
     #how { --hm: 2 } #price { --hm: 2 } #faq { --hm: 2 }
     #how .panel { --p-h: 180px; }
@@ -159,18 +159,25 @@
       </div>
       <div class="hero__media span-6 start-7" data-visual data-fx="silk-folds" data-fx-seed="7" data-ui-pause-host>
         <div class="stage">
-          <div class="at-corner" data-m-loop style="--m-cycle: 4s">
-            <div class="mdw" role="img" aria-label="Movie Doctor's result for a video: subtitles slip at 26:53, 17 lines are missing from the subtitles, sound matches the lips, Fix it pressed and the fixed copy saved">
-              <div class="mdw__bar"><span class="mdw__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="mdw__name">Movie Doctor</span><span class="mdw__file">interview.mp4</span></div>
-              <div class="mdw__body">
-                <div class="mdw__verdict">We found 2 problems we can fix</div>
-                <div class="mdw__sub">Subtitles checked: Hebrew (built-in)</div>
-                <div class="mdw__card is-1"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">Subtitles slip at 26:53</span><br><span class="mdw__d">From there they show 32.8 s early. Each line goes back on its sentence.</span></span></div>
-                <div class="mdw__card is-2"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">17 lines are missing from the subtitles</span><br><span class="mdw__d">They are transcribed, translated and added <mark>in yellow</mark>.</span></span></div>
-                <div class="mdw__card is-3"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">Sound matches the lips</span><br><span class="mdw__d">Measured in 3 scenes that agree.</span></span></div>
-                <div class="mdw__card is-4"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">The file is healthy</span><br><span class="mdw__d">No damage or timing errors.</span></span></div>
+          <div class="at-corner hp" data-m-loop style="--m-cycle: 4s; --m-still: 0.92">
+            <div class="hp__player" role="img" aria-label="Before: the subtitle appears 2.4 seconds before the person speaks. Movie Doctor finds it and Fix is pressed. After: the subtitle appears exactly when the person speaks.">
+              <div class="hp__screen">
+                <span class="hp__person hp__person--a" aria-hidden="true"><i class="hp__mouth"></i></span>
+                <span class="hp__person hp__person--b" aria-hidden="true"><i class="hp__mouth"></i></span>
+                <span class="hp__tag hp__tag--bad">Subtitle 2.4 s early</span>
+                <span class="hp__tag hp__tag--ok">On time ✓</span>
+                <span class="hp__sub hp__sub--early">So how did the channel start?</span>
+                <span class="hp__sub hp__sub--ok">So how did the channel start?</span>
               </div>
-              <div class="mdw__foot"><span class="mdw__btn">Fix it</span><span class="mdw__ghost">Quick check</span><span class="mdw__saved">interview.fixed.mp4 saved</span></div>
+              <div class="hp__bar" aria-hidden="true"><span class="hp__play"></span><span class="hp__track"><i></i></span><span class="hp__time">26:53</span></div>
+            </div>
+            <div class="mdw hp__app" aria-hidden="true">
+              <div class="mdw__bar"><span class="mdw__dots"><i></i><i></i><i></i></span><span class="mdw__name">Movie Doctor</span><span class="mdw__file">interview.mp4</span></div>
+              <div class="hp__row">
+                <span class="hp__find"><span class="mdw__ico mdw__ico--bad">✕</span><span><b>The subtitles come 2.4 s early</b><br><span class="mdw__d">From 26:53 to the end</span></span></span>
+                <span class="hp__done"><span class="mdw__ico mdw__ico--ok">✓</span><span><b>Fixed. Every line moved back</b><br><span class="mdw__d">interview.fixed.mp4 saved</span></span></span>
+                <span class="mdw__btn hp__fix">Fix it</span>
+              </div>
             </div>
           </div>
         </div>
@@ -278,7 +285,7 @@
       <div class="grid">
         <article class="card card--row card--open span-4">
           <h3>Puts the voice back on the lips</h3>
-          <p>When the voice comes before or after the mouth moves, it measures by how much and moves the sound back. It needs faces or subtitles on screen to measure.</p>
+          <p>When faces or subtitles are on screen, it measures how far the voice is off and moves the sound back.</p>
           <div class="panel" data-fx="grain-gradient" data-fx-seed="23" data-fx-params='{"drift":0}'>
             <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
               <div class="piece lips">
@@ -401,6 +408,7 @@
               <p class="t-small muted">We use your name and e-mail only to send the licence. <a href="privacy.html#en">Privacy</a></p>
             </form>
             <p class="pay__bit-result" data-bit-result hidden></p>
+            <p class="pay__trust t-small"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" fill="currentColor"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Secure payment through PayPal. Full refund within 14 days.</p>
             <p class="pay__msg t-small" data-pay-msg role="status"></p>
           </div>
           <ul class="checks">
@@ -484,6 +492,10 @@ v The file is healthy</pre>
   </div>
 </footer>
 
+<!-- phone: the buy button stays one tap away once the hero has scrolled off (system.js shows and hides it) -->
+<nav class="actionbar" aria-label="Quick actions">
+  <a class="btn btn--primary" href="#price">Buy Movie Doctor</a>
+</nav>
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
