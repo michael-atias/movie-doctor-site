@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-type="software" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Movie Doctor: sync repair for movies and TV episodes</title>
+<meta name="description" content="A Windows app that finds where subtitles or sound slip in a movie or a whole season, fixes it offline and saves a new copy. $39 once.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Movie Doctor: sync repair for movies and TV episodes">
+<meta property="og:description" content="Finds where subtitles or sound slip and saves a fixed copy, offline. $39 once.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#eeeeeb">
+<link rel="alternate" hreflang="he" href="index.html">
+<link rel="alternate" hreflang="en" href="en.html">
+<!-- <link rel="canonical" href="https://[the domain]/en.html"> : add once the domain is bought -->
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #eeeeeb; --p-surface: #e1e1dd; --p-ink: #1c1d1f; --p-muted: #5c5e62;
+  --p-accent: #c2501b; --p-accent-ink: #ffffff; --p-action: #c2501b; --p-action-ink: #ffffff;
+  --p-inv-bg: #1c1d1f; --p-inv-surface: #28292b; --p-inv-ink: #eeeeeb; --p-inv-muted: #969796;
+  --p-inv-accent: #c2501b; --p-inv-accent-ink: #ffffff; --p-inv-action: #c2501b; --p-inv-action-ink: #ffffff;
+  --font-display: "Instrument Sans", system-ui, sans-serif;
+  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.028em;
+  --display-tracking-xl: -0.036em;
+  --display-stretch: 96%;
+  --ly-scale: 1.04;
+}
+</style>
+<link rel="stylesheet" href="assets/ui/base.css">
+<link rel="stylesheet" href="assets/site/app.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/liquid-type/moment.js">
+<link rel="modulepreload" href="assets/moments/marquee-row/moment.js">
+<style>
+  /* page CSS: the hero window's place in its frame, one --p-h per card group */
+  .hero__media .stage { position: absolute; inset: 0; }
+  .hero__media .at-corner { --ax: 48px; --ay: 56px; width: 560px; }
+  #features .panel { --p-h: 300px; }
+  #how .panel { --p-h: 236px; }
+  #how .mo-row { margin-top: var(--s-7); }
+  .hw-logos { display: flex; align-items: center; gap: var(--s-5); flex-wrap: wrap; padding: var(--s-4) 0; }
+  .hw-logos .ic-wide { width: auto; height: 22px; }
+  .after-pay { margin: 0; padding: 0; list-style-position: inside; display: grid; gap: var(--s-2); }
+  #how [data-moment="marquee-row"] { overflow: hidden; }
+  @media (max-width: 1279px) {
+    .hero__media .at-corner { --ax: 32px; --ay: 40px; width: 500px; }
+    #features .panel { --p-h: 220px; }
+    #how .panel { --p-h: 200px; }
+  }
+  @media (min-width: 640px) and (max-width: 1279px) { #how { --h: 2 } #features .card.is-phone-skip { display: none; } }
+  @media (min-width: 640px) and (max-width: 1023px) { #how .panel { --p-h: 280px; } }
+  @media (min-width: 1024px) and (max-width: 1279px) { #features .panel { --p-h: 220px; }  #price .hw-logos { display: none; } }
+  @media (max-width: 639px) {
+    .hero__media .at-corner { --ax: 16px; --ay: 20px; width: 340px; }
+    #features .panel { --p-h: 190px; }
+    #features .card.is-phone-skip { display: none; }
+    #how { --hm: 2 } #price { --hm: 2 } #faq { --hm: 2 }
+    #how .panel { --p-h: 180px; }
+    #features .timeline .subs, #features .punct__row:nth-child(n+5), #features .lips__wave + .lips__read ~ * { display: none; }
+    #features .timeline__row:nth-child(3) { display: none; }
+    #original .mo-lt__type { font-size: 56px; line-height: 1.02; }
+    .nav__actions .nav__link[hreflang] { display: none; }
+  }
+  @media (max-width: 380px) {
+    .nav__actions .btn { display: none; }
+  }
+</style>
+</head>
+<body>
+<!-- type: software
+     deal: hero split, nav nav-mega, close close-type, footer footer-statement, rhythm space, buttons solid, mark initial,
+           grounds paper (page), effect silk-folds in the hero frame
+     moments: liquid-type on the statement "Movie Doctor never changes your original file" (#original);
+              marquee-row of the formats it opens, last row of #how -->
+
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">M</span>Movie Doctor</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item">
+        <a class="nav__link" href="#features">Features <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <div class="menu-col span-3">
+              <p class="t-label">Subtitles</p>
+              <a href="#features">Line-by-line sync<span>Every line on its sentence</span></a>
+              <a href="#features">Missing lines<span>Translated, added in yellow</span></a>
+              <a href="#features">Hebrew punctuation<span>Reads right on any TV</span></a>
+            </div>
+            <div class="menu-col span-3">
+              <p class="t-label">Sound and file</p>
+              <a href="#features">Lip sync check<span>Sound measured against lips</span></a>
+              <a href="#features">File health<span>Damage and TV problems</span></a>
+              <a href="#season">Season check<span>A folder of episodes at once</span></a>
+            </div>
+            <a class="menu-card span-3 start-10" href="#season">
+              <div class="panel"><div class="stage stage--fade-br"><div class="at-corner" style="--ax:20px;--ay:20px;width:300px">
+                <div class="piece"><div class="health">
+                  <div class="health__row"><span>Episode 13</span><span class="bad">6.2 s late</span></div>
+                  <div class="health__row"><span>Episode 14</span><span class="bad">6.0 s late</span></div>
+                  <div class="health__row"><span>Episode 12</span><span class="ok">in sync</span></div>
+                </div></div>
+              </div></div></div>
+              <span class="t-card">Season check</span>
+              <span class="t-small muted">Every episode, one button</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="#season">Seasons</a></div>
+      <div class="nav__item"><a class="nav__link" href="#price">Price</a></div>
+      <div class="nav__item"><a class="nav__link" href="#faq">Questions</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__link" href="index.html" hreflang="he" lang="he">עברית</a>
+      <a class="btn btn--primary" href="#price" data-buy>Buy Movie Doctor</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text span-5">
+        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>For Windows 10 and 11, works offline</p>
+        <h1 id="hero-h">Fixes subtitle and sound sync in movies</h1>
+        <p class="hero__lead">Drop in a movie or a whole season. Movie Doctor listens to the dialogue, finds the minute the subtitles or the sound slip, and saves a fixed copy.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="#price" data-buy>Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#season">See a real check</a></div>
+        <dl class="hero-facts">
+          <div><dt>Price</dt><dd>$39 once</dd></div>
+          <div><dt>A 2-hour movie</dt><dd>about 4 min<sup><a href="#note-1" aria-label="Note 1">1</a></sup></dd></div>
+          <div><dt>Your files</dt><dd>never uploaded</dd></div>
+        </dl>
+      </div>
+      <div class="hero__media span-6 start-7" data-visual data-fx="silk-folds" data-fx-seed="7" data-ui-pause-host>
+        <div class="stage">
+          <div class="at-corner" data-m-loop style="--m-cycle: 4s">
+            <div class="mdw" role="img" aria-label="Movie Doctor's result for a movie: subtitles slip at 26:53, 17 lines were never translated, sound matches the lips, Fix it pressed and the fixed copy saved">
+              <div class="mdw__bar"><span class="mdw__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="mdw__name">Movie Doctor</span><span class="mdw__file">movie.mkv</span></div>
+              <div class="mdw__body">
+                <div class="mdw__verdict">We found 2 problems we can fix</div>
+                <div class="mdw__sub">Subtitles checked: Hebrew (built-in)</div>
+                <div class="mdw__card is-1"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">Subtitles slip at 26:53</span><br><span class="mdw__d">From there they show 32.8 s early. Each line goes back on its sentence.</span></span></div>
+                <div class="mdw__card is-2"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">17 lines were never translated</span><br><span class="mdw__d">They are translated and added <mark>in yellow</mark>.</span></span></div>
+                <div class="mdw__card is-3"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">Sound matches the lips</span><br><span class="mdw__d">Measured in 3 scenes that agree.</span></span></div>
+                <div class="mdw__card is-4"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">The file is healthy</span><br><span class="mdw__d">No damage or timing errors.</span></span></div>
+              </div>
+              <div class="mdw__foot"><span class="mdw__btn">Fix it</span><span class="mdw__ghost">Quick check</span><span class="mdw__saved">movie.fixed.mkv saved</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="season" aria-labelledby="season-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <h2 class="span-5" id="season-h">A whole season, checked in one go</h2>
+        <div class="span-6 start-7 stack-4">
+          <p>Drop the folder. Each episode is checked in turn, and the series' shared opening confirms every delay it finds. One button then fixes them all.</p>
+          <a class="link" href="#how">See the three steps</a>
+        </div>
+      </div>
+      <div class="season ui fill" role="img" aria-label="Season check of 22 episodes: episodes 1 to 12 in sync, episodes 13 to 22 have sound about 6 seconds late; episode 14 is open and being fixed" data-ui-pause-host>
+        <div class="season__pane season__pane--list">
+          <div class="ep-head"><span>Episode</span><span>Result</span><span></span></div>
+          <div class="ep"><span class="ep__n">E09</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
+          <div class="ep"><span class="ep__n">E10</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
+          <div class="ep"><span class="ep__n">E11</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
+          <div class="ep"><span class="ep__n">E12</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
+          <div class="ep"><span class="ep__n">E13</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep is-open"><span class="ep__n">E14</span><span>Sound 6.0 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep"><span class="ep__n">E15</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep"><span class="ep__n">E16</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep"><span class="ep__n">E17</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep"><span class="ep__n">E18</span><span>Sound 6.3 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep"><span class="ep__n">E19</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+          <div class="ep"><span class="ep__n">E20</span><span>Sound 6.3 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
+        </div>
+        <div class="season__pane season__pane--open" data-m-loop style="--m-cycle: 3.6s">
+          <div class="open">
+            <div class="open__title">Episode 14: the sound comes 6.0 s late</div>
+            <div class="open__meta">Measured from the burned-in subtitles, confirmed by the shared intro with episode 1</div>
+            <div class="track">
+              <div class="track__row"><span>Picture</span><span class="track__lane"><i style="left:6%;width:14%"></i><i style="left:28%;width:9%"></i><i style="left:44%;width:18%"></i><i style="left:70%;width:12%"></i></span></div>
+              <div class="track__row"><span>Sound</span><span class="track__lane track__lane--sound"><i style="left:6%;width:14%"></i><i style="left:28%;width:9%"></i><i style="left:44%;width:18%"></i><i style="left:70%;width:12%"></i></span></div>
+            </div>
+            <div class="mdw__card"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">Sound 6.0 s late from the first minute</span><br><span class="mdw__d">The sound is moved 6.0 s earlier. The picture is copied as it is, so nothing is re-encoded.</span></span></div>
+            <div class="mdw__card"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">Confirmed by the shared intro</span><br><span class="mdw__d">The intro music comes 6.3 s after its picture, compared with episode 1.</span></span></div>
+            <div class="progress" aria-hidden="true"><i></i></div>
+            <div class="mdw__foot" style="padding:0"><span class="mdw__btn">Fix everything that can be fixed</span><span class="mdw__ghost">10 episodes</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="original" data-statement aria-labelledby="original-h">
+    <div class="wrap">
+      <div data-moment="liquid-type" class="section-head" style="max-width:none">
+        <h2 class="mo-lt__type t-display" id="original-h">Movie Doctor never changes your original file</h2>
+        <p>Movie Doctor writes a new file beside it, ending in .fixed. Keep the one you like and delete the other.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section g2" id="features" aria-labelledby="features-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="features-h">Five fixes in one app. <span class="muted">Each one is explained before you save.</span></h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row card--open span-6">
+            <h3>Puts every subtitle on its sentence</h3>
+            <p>Speech recognition hears each line and matches it to its translation, so a cut or an extra scene is found to the second.</p>
+            <div class="panel" data-fx="grain-gradient" data-fx-seed="21" data-fx-params='{"drift":0}'>
+              <div class="stage stage--fade-br"><div class="at-corner" style="--ax:32px;--ay:40px;width:540px" data-m-loop>
+                <div class="piece timeline">
+                  <div class="timeline__row"><span>Speech</span><span class="timeline__lane"><i style="left:4%;width:10%"></i><i style="left:20%;width:13%"></i><i style="left:39%;width:8%"></i><i style="left:58%;width:12%"></i><i style="left:76%;width:10%"></i></span></div>
+                  <div class="timeline__row"><span>Subtitles</span><span class="timeline__lane timeline__lane--subs"><i style="left:4%;width:10%"></i><i style="left:20%;width:13%"></i><i style="left:39%;width:8%"></i><i class="is-late" style="left:58%;width:12%"></i><i class="is-late" style="left:76%;width:10%"></i><span class="timeline__cut" style="left:52%"></span></span></div>
+                  <div class="timeline__row"><span></span><span class="timeline__note">26:53 cut found, lines after it moved 32.8 s</span></div>
+                  <div class="subs" style="margin-top:8px">
+                    <div class="sub"><span class="sub__t">26:41</span><span class="sub__x">We have to leave tonight.</span></div>
+                    <div class="sub"><span class="sub__t">26:47</span><span class="sub__x">Not without the drive.</span></div>
+                    <div class="sub"><span class="sub__t">27:26</span><span class="sub__x">Who sent you? <span class="ok" style="font-family:var(--font-mono);font-size:11.5px">moved +32.8 s</span></span></div>
+                    <div class="sub"><span class="sub__t">27:31</span><span class="sub__x">Nobody sends me. <span class="ok" style="font-family:var(--font-mono);font-size:11.5px">moved +32.8 s</span></span></div>
+                  </div>
+                </div>
+              </div></div>
+            </div>
+          </article>
+          <article class="card card--row card--open span-6">
+            <h3>Adds missing lines</h3>
+            <p>Dialogue nobody translated is translated on your PC and added in yellow.</p>
+            <div class="panel" data-fx="grain-gradient" data-fx-seed="22" data-fx-params='{"drift":0}'>
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
+                <div class="piece subs">
+                  <div class="sub"><span class="sub__t">41:07</span><span class="sub__x">Where were you last night?</span></div>
+                  <div class="sub sub--new"><span class="sub__t">41:10</span><span class="sub__x">I told you, at work.</span></div>
+                  <div class="sub"><span class="sub__t">41:13</span><span class="sub__x">Until three in the morning?</span></div>
+                  <div class="sub sub--new"><span class="sub__t">41:16</span><span class="sub__x">The server went down.</span></div>
+                  <div class="sub"><span class="sub__t">41:20</span><span class="sub__x">You could have called.</span></div>
+                  <div class="sub sub--new"><span class="sub__t">41:23</span><span class="sub__x">My phone was dead.</span></div>
+                  <div class="sub"><span class="sub__t">41:27</span><span class="sub__x">Of course it was.</span></div>
+                </div>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-4">
+          <h3>Checks lip sync</h3>
+          <p>Lips in several scenes measure the sound's delay. Cartoons are checked against burned-in subtitles.</p>
+          <div class="panel" data-fx="grain-gradient" data-fx-seed="23" data-fx-params='{"drift":0}'>
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
+              <div class="piece lips">
+                <div class="lips__wave" aria-hidden="true"><i style="height:20%"></i><i style="height:45%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:30%"></i><i style="height:65%"></i><i style="height:95%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:40%"></i><i style="height:25%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:45%"></i><i style="height:30%"></i><i style="height:60%"></i></div>
+                <div class="lips__read"><span>Scene 1 +0.08 s</span><span>Scene 2 +0.06 s</span></div>
+                <div class="lips__read"><span>Scene 3 +0.09 s</span><b>in sync</b></div>
+                <div class="lips__wave" aria-hidden="true"><i style="height:35%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:85%"></i><i style="height:50%"></i><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:90%"></i><i style="height:55%"></i><i style="height:25%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:75%"></i><i style="height:30%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:35%"></i></div>
+                <div class="lips__read"><span>Episode 14, burned-in subtitles</span><span class="bad">+6.0 s</span></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-4">
+          <h3>Fixes Hebrew punctuation</h3>
+          <p>Old subtitles with reversed full stops and commas are rewritten to read right on a PC, phone or TV.</p>
+          <div class="panel" data-fx="grain-gradient" data-fx-seed="24" data-fx-params='{"drift":0}'>
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
+              <div class="piece punct" lang="he">
+                <div class="punct__row"><span class="punct__bad">.איפה היית</span><span class="punct__tag">before</span></div>
+                <div class="punct__row"><span>איפה היית.</span><span class="punct__tag">after</span></div>
+                <div class="punct__row"><span class="punct__bad">?באמת ,כן</span><span class="punct__tag">before</span></div>
+                <div class="punct__row"><span>כן, באמת?</span><span class="punct__tag">after</span></div>
+                <div class="punct__row"><span class="punct__bad">!עכשיו ,לך</span><span class="punct__tag">before</span></div>
+                <div class="punct__row"><span>לך, עכשיו!</span><span class="punct__tag">after</span></div>
+                <div class="punct__row"><span class="punct__bad">תורגם ע"י אתר כתוביות</span><span class="punct__tag">ad removed</span></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-4 is-phone-skip">
+          <h3>Spots damaged files</h3>
+          <p>Timestamp errors, broken frames and sound your TV can't play, each with what to do.</p>
+          <div class="panel" data-fx="grain-gradient" data-fx-seed="25" data-fx-params='{"drift":0}'>
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
+              <div class="piece health">
+                <div class="health__row"><span>Timestamps</span><span class="ok">regular</span></div>
+                <div class="health__row"><span>Frames decoded</span><span class="ok">no errors</span></div>
+                <div class="health__row"><span>Sound format</span><span class="warn">DTS: adds AAC</span></div>
+                <div class="health__row"><span>Loudness</span><span class="warn">quiet dialogue</span></div>
+                <div class="health__row"><span>Frame rate</span><span class="ok">23.976, constant</span></div>
+                <div class="health__row"><span>Interlacing</span><span class="ok">none</span></div>
+                <div class="health__row"><span>This PC plays it</span><span class="ok">27x real time</span></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="how-h">Fixed in 3 steps</h2></div>
+      <div class="grid">
+        <article class="card card--row card--open span-4">
+          <span class="step-num">1</span>
+          <h3>Drop in a movie</h3>
+          <p>Or a folder of episodes, with built-in or separate subtitles.</p>
+          <div class="panel" data-ui-pause-host>
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
+              <div class="piece"><div class="drop"><b>Drop a movie or a folder</b><span>MKV, MP4, AVI and more</span><span class="drop__file">Season 1 (22 files)</span></div></div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-4">
+          <span class="step-num">2</span>
+          <h3>Read the verdict</h3>
+          <p>Plain sentences: what is wrong, where, and by how much.</p>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
+              <div class="piece"><div class="mdw__verdict" style="color:#f0645a;font-size:17px">We found a problem we can fix</div><div class="mdw__d" style="margin-top:6px">Until 3:01 the subtitles are fine. From 3:01 they show 17.9 s early.</div><div class="health" style="margin-top:12px"><div class="health__row"><span>Sound</span><span class="ok">in sync</span></div><div class="health__row"><span>File</span><span class="ok">healthy</span></div></div></div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-4">
+          <span class="step-num">3</span>
+          <h3>Press Fix</h3>
+          <p>A fixed copy is saved. Three short clips let you confirm it by eye.</p>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
+              <div class="piece"><div class="health"><div class="health__row"><span>Clip at 26:53</span><span class="ok">perfect</span></div><div class="health__row"><span>Clip at 58:10</span><span class="ok">perfect</span></div><div class="health__row"><span>movie.fixed.mkv</span><span class="ok">saved</span></div></div></div>
+            </div></div>
+          </div>
+        </article>
+      </div>
+      <div class="mo-row marquee">
+        <p class="t-label muted">Opens</p>
+        <div data-moment="marquee-row" data-moment-opts='{"speed": 32}'>
+          <ul class="mo-mq__track"><li>MKV</li><li>MP4</li><li>AVI</li><li>MOV</li><li>M4V</li><li>TS</li><li>M2TS</li><li>WMV</li><li>WebM</li><li>MPG</li><li>SRT</li><li>ASS</li><li>SSA</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="price" aria-labelledby="price-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <h2 id="price-h">One price. <span class="muted">Yours for good.</span></h2>
+          <p>Pay once and keep every 1.x update. Every licence includes the season check, line-by-line subtitle sync, missing-line translation and the Hebrew and English app.</p>
+          <div class="after-pay">
+            <p>1. Paddle, our reseller, emails the receipt.</p>
+            <p>2. We email the download link and your licence key within one working day.</p>
+            <p>3. Paste the key into the app. Done.</p>
+          </div>
+          <a class="link" href="terms.html#refunds-en">Read the refund policy</a>
+        </div>
+        <article class="card card--plan is-featured span-4 start-5">
+          <h3>Movie Doctor Pro</h3>
+          <p class="muted">Lifetime licence for one person</p>
+          <p class="price"><span class="t-stat">$39</span> <span class="t-small muted">one payment, VAT included</span></p>
+          <a class="btn btn--primary" href="#price" data-buy>Buy Movie Doctor</a>
+          <ul class="checks">
+            <li>All features free for 14 days</li>
+            <li>Checking stays free after that</li>
+            <li>Full refund within 14 days of purchase</li>
+            <li>Pay by card or Google Pay</li>
+          </ul>
+        </article>
+        <article class="card card--plan span-4 start-9">
+          <h3>Your computer</h3>
+          <p class="muted">What Movie Doctor needs</p>
+          <p class="price"><span class="t-stat">Windows</span> <span class="t-small muted">10 or 11, 64-bit</span></p>
+          <div class="hw-logos"><img class="ic ic-40" src="assets/icons/windows.svg" alt="Windows" width="40" height="40"><img class="ic ic-40 ic-wide" src="assets/icons/nvidia.svg" alt="Nvidia" width="40" height="8"><img class="ic ic-40 ic-wide ic-ink" src="assets/icons/amd.svg" alt="AMD" width="40" height="10"><img class="ic ic-40 ic-wide" src="assets/icons/intel.svg" alt="Intel" width="40" height="17"></div>
+          <ul class="checks">
+            <li>NVIDIA graphics: full speed</li>
+            <li>AMD or Intel graphics, or older PCs: lighter modes</li>
+            <li>10 GB free for the AI models</li>
+            <li>Internet only for their first download</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="grid grid--top fill">
+        <div class="span-5 stack-4">
+          <h2 id="faq-h">Questions</h2>
+          <p class="muted">Anything else, write to us.</p>
+          <a class="link" href="mailto:support@moviedoctor.example">Email support</a>
+          <div class="piece copied" role="img" aria-label="The text Movie Doctor copies with its Copy results button, ready to paste into an e-mail">
+            <div class="copied__head"><span>Copy results</span><span class="ok">copied</span></div>
+            <pre>Movie Doctor - movie.mkv
+We found a problem we can fix
+x Subtitles slip at 26:53
+  From there they show 32.8 s early.
+v Sound matches the lips
+v The file is healthy</pre>
+          </div>
+        </div>
+        <div class="faq span-6 start-7">
+          <div class="faq__item"><h3>Does it work without internet?</h3><p>Yes. After a one-time download of the AI models (about 10 GB), every check and fix runs on your PC. Nothing is uploaded.</p></div>
+          <div class="faq__item"><h3>Will it change my original file?</h3><p>No. It saves a new file beside it, ending in .fixed.</p></div>
+          <div class="faq__item"><h3>Do I need an NVIDIA graphics card?</h3><p>No. NVIDIA is fastest. AMD and Intel graphics run in balanced mode, and older PCs in light mode with smaller models.</p></div>
+          <div class="faq__item"><h3>Is there a Mac version?</h3><p>Not now. Movie Doctor runs on Windows 10 and 11.</p></div>
+          <div class="faq__item"><h3>Can it read picture-based subtitles?</h3><p>Not yet. It reads SRT, ASS and SSA files and text tracks inside the movie; PGS and VobSub images can't be read.</p></div>
+          <div class="faq__item"><h3>What if it doesn't help with my file?</h3><p>Ask within 14 days of purchase and you get the full $39 back.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing footer--statement" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Stop nudging subtitles by hand</h2>
+        <p class="t-small muted">$39 once, VAT included. Full refund within 14 days.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="#price" data-buy>Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top">Movie Doctor</a>
+          <p class="footer__lede">Fixes sound, picture and subtitle sync in movies, on your own computer.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Product</h3><ul><li><a href="#features">Features</a></li><li><a href="#season">Season check</a></li><li><a href="#how">How it works</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Buying</h3><ul><li><a href="#price">Price</a></li><li><a href="#faq">Questions</a></li><li><a href="terms.html#refunds-en">Refunds</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Legal</h3><ul><li><a href="terms.html#en">Terms</a></li><li><a href="privacy.html#en">Privacy</a></li><li><a href="accessibility.html#en">Accessibility</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Language</h3><ul><li><a href="index.html" hreflang="he" lang="he">עברית</a></li><li><a href="en.html">English</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Movie Doctor &nbsp; <a href="terms.html#en">Terms</a> &nbsp; <a href="privacy.html#en">Privacy</a> &nbsp; <a href="accessibility.html#en">Accessibility</a></span>
+        <span class="t-small" id="note-1">1. Measured on a laptop with an NVIDIA RTX 4060, a 2 h 13 min movie. Payments by Paddle.com, our reseller.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="assets/site/buy.js"></script>
+</body>
+</html>

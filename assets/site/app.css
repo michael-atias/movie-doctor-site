@@ -1,0 +1,148 @@
+/* Movie Doctor's own window, drawn as live HTML inside the page's visuals (page CSS: only what sits inside a visual).
+   The colours are the app's own: a near-black window, blue action, red / yellow / green states. */
+.mdw, .season, .piece {
+  --w-bg: #14161b; --w-surface: #1b1e25; --w-line: #2a2e38; --w-ink: #e8eaf0; --w-muted: #9aa0ad;
+  --w-blue: #4f8cff; --w-red: #f0645a; --w-green: #43c477; --w-yellow: #e9bd3a;
+}
+.mdw {
+  background: var(--w-bg); color: var(--w-ink); border: 1px solid #000; border-radius: 14px;
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / .45), 0 0 0 1px rgb(255 255 255 / .04) inset;
+  font-family: var(--font-text); font-size: 13px; line-height: 1.45; overflow: hidden; text-align: start;
+}
+.mdw__bar { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--w-line); }
+.mdw__dots { display: flex; gap: 6px; }
+.mdw__dots i { width: 10px; height: 10px; border-radius: 50%; background: #3a3f4b; display: block; }
+.mdw__name { font-weight: 500; font-size: 14px; }
+.mdw__file { color: var(--w-muted); font-family: var(--font-mono); font-size: 12px; margin-inline-start: auto; }
+.mdw__body { padding: 20px; display: grid; gap: 10px; }
+.mdw__verdict { font-size: 20px; font-weight: 500; color: var(--w-red); letter-spacing: -.01em; }
+.mdw__sub { color: var(--w-muted); font-size: 12px; margin-top: -6px; }
+.mdw__card { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; background: var(--w-surface);
+  border: 1px solid var(--w-line); border-radius: 10px; padding: 12px 14px; }
+.mdw__ico { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 14px; font-weight: 600; }
+.mdw__ico--bad { background: rgb(240 100 90 / .16); color: var(--w-red); }
+.mdw__ico--ok { background: rgb(67 196 119 / .16); color: var(--w-green); }
+.mdw__ico--warn { background: rgb(233 189 58 / .16); color: var(--w-yellow); }
+.mdw__t { font-weight: 500; font-size: 14px; }
+.mdw__d { color: var(--w-muted); font-size: 12.5px; }
+.mdw__foot { display: flex; align-items: center; gap: 12px; padding: 14px 20px 18px; }
+.mdw__btn { background: var(--p-action, #c2501b); color: #fff; border-radius: 8px; padding: 9px 18px; font-weight: 500; font-size: 14px; }
+.mdw__ghost { padding: 8px 4px; color: var(--w-muted); font-size: 12px; }
+.mdw__saved { margin-inline-start: auto; color: var(--w-green); font-size: 12.5px; font-family: var(--font-mono); }
+.mdw mark { background: none; color: var(--w-yellow); font-style: italic; }
+
+/* the hero's loop: the cards arrive, Fix is pressed, the copy is saved (one cycle, data-m-loop) */
+@keyframes mdw-in { 0%, 8% { opacity: 0; transform: translateY(6px); } 18%, 100% { opacity: 1; transform: none; } }
+@keyframes mdw-press { 0%, 60% { transform: none; filter: none; } 66% { transform: scale(.94); filter: brightness(1.2); } 72%, 100% { transform: none; filter: none; } }
+@keyframes mdw-save { 0%, 70% { opacity: 0; } 78%, 100% { opacity: 1; } }
+[data-m-loop] .mdw__card { animation-fill-mode: both; }
+[data-m-loop] .mdw__card.is-1 { animation-name: mdw-in; }
+[data-m-loop] .mdw__card.is-2 { animation-name: mdw-in2; }
+[data-m-loop] .mdw__card.is-3 { animation-name: mdw-in3; }
+[data-m-loop] .mdw__card.is-4 { animation-name: mdw-in4; }
+@keyframes mdw-in2 { 0%, 14% { opacity: 0; transform: translateY(6px); } 24%, 100% { opacity: 1; transform: none; } }
+@keyframes mdw-in3 { 0%, 20% { opacity: 0; transform: translateY(6px); } 30%, 100% { opacity: 1; transform: none; } }
+@keyframes mdw-in4 { 0%, 26% { opacity: 0; transform: translateY(6px); } 36%, 100% { opacity: 1; transform: none; } }
+[data-m-loop] .mdw__btn { animation-name: mdw-press; }
+[data-m-loop] .mdw__saved { animation-name: mdw-save; animation-fill-mode: both; }
+
+/* the season window (app-frame): episodes on the left, the open episode on the right */
+.season.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7);
+  background: #14161b; color: #e8eaf0; border: 1px solid #000; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 30px 60px -24px rgb(0 0 0 / .4); font-size: 13px; text-align: start; }
+.season > .season__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.season > .season__pane + .season__pane { border-inline-start: 1px solid #2a2e38; }
+.season > .season__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, #14161b); pointer-events: none; }
+.ep-head, .ep { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: center; padding: 11px 18px; border-bottom: 1px solid #22262f; }
+.ep-head { color: #9aa0ad; font-size: 12px; background: #181b21; }
+.ep__n { font-family: var(--font-mono); color: #9aa0ad; }
+.ep__state { font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.ep__state::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.ep__state--ok { color: #43c477; } .ep__state--fix { color: #f0645a; }
+.ep.is-open { background: #1f2430; box-shadow: inset 3px 0 0 #4f8cff; }
+.open { padding: 22px; display: grid; gap: 14px; }
+.open__title { font-size: 20px; font-weight: 500; color: #f0645a; }
+.open__meta { color: #9aa0ad; font-size: 12px; margin-top: -8px; }
+.track { display: grid; gap: 6px; }
+.track__row { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: center; color: #9aa0ad; font-size: 12px; }
+.track__lane { position: relative; height: 22px; border-radius: 6px; background: #1b1e25; overflow: hidden; }
+.track__lane i { position: absolute; top: 4px; bottom: 4px; border-radius: 4px; background: #4f8cff; opacity: .85; }
+.track__lane--sound i { background: #e9bd3a; }
+@keyframes snd-move { 0%, 45% { transform: translateX(var(--late, 9%)); } 60%, 100% { transform: none; } }
+[data-m-loop] .track__lane--sound i { animation-name: snd-move; animation-fill-mode: both; }
+[dir="rtl"] .track__lane--sound i { --late: -9%; }
+.progress { height: 6px; border-radius: 3px; background: #22262f; overflow: hidden; }
+.progress i { display: block; height: 100%; width: 100%; background: #4f8cff; transform-origin: left; }
+[dir="rtl"] .progress i { transform-origin: right; }
+@keyframes fill { 0%, 45% { transform: scaleX(.05); } 75%, 100% { transform: scaleX(1); } }
+[data-m-loop] .progress i { animation-name: fill; animation-fill-mode: both; }
+@media (min-width: 1024px) and (max-width: 1279px) { .season.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+@media (max-width: 1023px) {
+  .season.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .season > .season__pane--list { max-height: 252px; }
+  .season > .season__pane--list::after { display: none; }
+  .season > .season__pane + .season__pane { border-inline-start: 0; border-top: 1px solid #2a2e38; }
+}
+@media (max-width: 639px) {
+  .season.ui { grid-template-rows: minmax(0, 1fr); }
+  .season > .season__pane--list { display: none; }
+  .season > .season__pane + .season__pane { border-top: 0; }
+}
+
+/* small pieces inside the feature panels */
+.piece { background: #14161b; color: #e8eaf0; border-radius: 12px; border: 1px solid #000; padding: 16px; font-size: 13px; text-align: start;
+  box-shadow: 0 18px 40px -18px rgb(0 0 0 / .45); }
+.subs { display: grid; gap: 8px; }
+.sub { display: grid; grid-template-columns: 58px 1fr; gap: 10px; align-items: baseline; }
+.sub__t { font-family: var(--font-mono); font-size: 11.5px; color: #9aa0ad; }
+.sub__x { font-size: 14px; }
+.sub--new .sub__x { color: #e9bd3a; font-style: italic; }
+.timeline { display: grid; gap: 10px; }
+.timeline__row { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: center; font-size: 12px; color: #9aa0ad; }
+.timeline__lane { position: relative; height: 26px; border-radius: 6px; background: #1b1e25; }
+.timeline__lane i { position: absolute; top: 5px; bottom: 5px; border-radius: 4px; background: #e9bd3a; }
+.timeline__lane--subs i { background: #4f8cff; }
+.timeline__cut { position: absolute; top: -6px; bottom: -6px; width: 2px; background: #f0645a; }
+.timeline__note { font-family: var(--font-mono); font-size: 12px; color: #f0645a; }
+@keyframes subs-snap { 0%, 40% { transform: translateX(var(--off, 34px)); } 62%, 100% { transform: none; } }
+[data-m-loop] .timeline__lane--subs i.is-late { animation-name: subs-snap; animation-fill-mode: both; }
+[dir="rtl"] .timeline__lane--subs i.is-late { --off: -34px; }
+.lips { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.lips__wave { display: flex; align-items: center; gap: 3px; height: 54px; }
+.lips__wave i { width: 4px; border-radius: 2px; background: #e9bd3a; display: block; }
+.lips__read { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 12px; color: #9aa0ad; }
+.lips__read b { color: #43c477; font-weight: 500; }
+.punct { display: grid; gap: 10px; direction: rtl; text-align: right; font-size: 16px; }
+.punct__row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; }
+.punct__tag { direction: ltr; font-size: 11px; font-family: var(--font-mono); color: #9aa0ad; }
+.punct__bad { color: #f0645a; text-decoration: line-through; text-decoration-thickness: 1px; }
+.health { display: grid; gap: 8px; }
+.health__row { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 1px solid #22262f; }
+.health__row:last-child { border-bottom: 0; padding-bottom: 0; }
+.ok { color: #43c477; } .bad { color: #f0645a; } .warn { color: #e9bd3a; }
+.drop { border: 1.5px dashed #3a4050; border-radius: 12px; padding: 22px; display: grid; gap: 6px; place-items: center; text-align: center; color: #9aa0ad; }
+.drop b { color: #e8eaf0; font-weight: 500; font-size: 15px; }
+.drop__file { margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: #e8eaf0; background: #1f2430; border-radius: 6px; padding: 6px 10px; }
+
+/* the statement's picture: the two files side by side in a folder */
+.files { display: grid; gap: 0; margin-top: var(--s-8); background: #14161b; color: #e8eaf0; border-radius: 14px; border: 1px solid #000; box-shadow: 0 30px 60px -24px rgb(0 0 0 / .35); font-size: 14px; text-align: start; }
+.files__head, .files__row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) minmax(0, 2fr); gap: 16px; padding: 14px 24px; align-items: center; }
+.files__head { color: #9aa0ad; font-size: 12px; background: #181b21; border-radius: 13px 13px 0 0; border-bottom: 1px solid #22262f; }
+.files__row + .files__row { border-top: 1px solid #22262f; }
+.files__name { font-family: var(--font-mono); display: flex; align-items: center; gap: 12px; }
+.files__name::before { content: ""; width: 18px; height: 22px; border-radius: 3px; background: #4f8cff; opacity: .9; flex: none; }
+.files__row--new .files__name::before { background: #43c477; }
+.files__note { color: #9aa0ad; }
+.files__row--new .files__note { color: #43c477; }
+@media (max-width: 639px) { .files__head, .files__row { grid-template-columns: minmax(0, 1fr) auto; } .files__size { display: none; } }
+.closing .mark--initial { background: var(--p-accent); color: #fff; }
+
+/* right to left: arrows point the reading way */
+[dir="rtl"] .m-arrow { transform: scaleX(-1); }
+[dir="rtl"] .link::after { content: "\2190"; }
+
+/* the FAQ's picture: what "Copy results" puts on the clipboard */
+.copied { margin-top: var(--s-6); max-width: 420px; }
+.copied__head { display: flex; justify-content: space-between; color: #9aa0ad; font-size: 12px; padding-bottom: 10px; border-bottom: 1px solid #22262f; margin-bottom: 10px; }
+.copied pre { margin: 0; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; white-space: pre-wrap; color: #e8eaf0; }
+@media (max-width: 639px) { #features .card .at-corner { width: auto; right: 16px; } }

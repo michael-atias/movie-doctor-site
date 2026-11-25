@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-type="software" data-radius="soft" data-buttons="solid">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Movie Doctor: תודה על הרכישה</title>
+<meta name="description" content="הרכישה הושלמה. קישור ההורדה ומפתח הרישיון יישלחו אליך בדוא״ל.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#eeeeeb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;600&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<style>
+:root {
+  --p-bg: #eeeeeb; --p-surface: #e1e1dd; --p-ink: #1c1d1f; --p-muted: #5c5e62;
+  --p-accent: #c2501b; --p-accent-ink: #ffffff; --p-action: #c2501b; --p-action-ink: #ffffff;
+  --font-display: "Instrument Sans", "IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --font-text: "Instrument Sans", "IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --display-weight: 500; --display-tracking: -0.012em;
+}
+</style>
+<link rel="stylesheet" href="assets/site/legal.css">
+</head>
+<body>
+<header class="legal-nav"><div class="wrap"><a class="nav__logo" href="index.html"><span class="mark mark--initial" aria-hidden="true">M</span>Movie Doctor</a></div></header>
+<main class="legal" id="top">
+<div class="wrap">
+  <section id="he">
+    <h1>תודה, הרכישה הושלמה</h1>
+    <ol>
+      <li>Paddle, המשווק שלנו, שלח לך קבלה בדוא"ל.</li>
+      <li>תוך יום עסקים אחד נשלח לך בדוא"ל קישור הורדה ומפתח רישיון אישי.</li>
+      <li>מתקינים, מדביקים את המפתח בתוכנה, וגוררים את הסרט הראשון.</li>
+    </ol>
+    <p>יש שאלה או שהמייל לא הגיע? <a class="link" href="mailto:support@moviedoctor.example">לכתוב לתמיכה</a></p>
+    <p><a class="link" href="index.html">חזרה לדף הבית</a></p>
+  </section>
+  <section id="en" class="lang-en" lang="en" hidden>
+    <h1>Thank you, your order is complete</h1>
+    <ol>
+      <li>Paddle, our reseller, has e-mailed your receipt.</li>
+      <li>Within one working day we e-mail your download link and personal licence key.</li>
+      <li>Install, paste the key into the app and drop in your first movie.</li>
+    </ol>
+    <p>A question, or no e-mail yet? <a class="link" href="mailto:support@moviedoctor.example">Email support</a></p>
+    <p><a class="link" href="en.html">Back to the home page</a></p>
+  </section>
+</div>
+</main>
+<script>
+  if (new URLSearchParams(location.search).get('lang') === 'en') {
+    document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr';
+    document.getElementById('he').hidden = true; document.getElementById('en').hidden = false;
+    document.title = 'Movie Doctor: thank you for your order';
+  }
+</script>
+</body>
+</html>
