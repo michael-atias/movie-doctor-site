@@ -19,3 +19,7 @@
 @media (max-width: 639px) { .legal .box dl { grid-template-columns: 1fr; } .legal .box dt { margin-top: var(--s-2); } }
 .legal .dl { list-style: none; padding: 0; display: grid; gap: var(--s-4); margin: var(--s-6) 0; }
 .legal .dl li { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
+.legal .dlkey { display: grid; gap: var(--s-3); margin: var(--s-6) 0; max-width: 640px; }
+.legal .dlkey textarea { font: 13px/1.5 var(--font-mono, monospace); padding: var(--s-3); border-radius: var(--r-sm); border: 1px solid color-mix(in oklab, var(--ink) 25%, transparent); background: #fff; color: var(--ink); resize: vertical; }
+.legal .dlkey .btn { justify-self: start; }
+.legal .dlkey__err { color: #b3261e; margin: 0; }
