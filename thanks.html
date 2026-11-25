@@ -2,6 +2,9 @@
 <html lang="he" dir="rtl" data-type="software" data-radius="soft" data-buttons="solid">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.paddle.com https://*.paddle.com https://*.profitwell.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.paddle.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.paddle.com https://*.profitwell.com; connect-src 'self' https://*.paddle.com https://*.profitwell.com; frame-src https://*.paddle.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://*.paddle.com; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script src="assets/site/frame.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Movie Doctor: תודה על הרכישה</title>
 <meta name="description" content="הרכישה הושלמה. קישור ההורדה ומפתח הרישיון יישלחו אליך בדוא״ל.">
@@ -34,7 +37,7 @@
       <li>תוך יום עסקים אחד נשלח לך בדוא"ל קישור הורדה ומפתח רישיון אישי.</li>
       <li>מתקינים, מדביקים את המפתח בתוכנה, וגוררים את הסרט הראשון.</li>
     </ol>
-    <p>יש שאלה או שהמייל לא הגיע? <a class="link" href="mailto:support@moviedoctor.example">לכתוב לתמיכה</a></p>
+    <p>יש שאלה או שהמייל לא הגיע? <a class="link" href="mailto:support@tamhir.co.il">לכתוב לתמיכה</a></p>
     <p><a class="link" href="index.html">חזרה לדף הבית</a></p>
   </section>
   <section id="en" class="lang-en" lang="en" hidden>
@@ -44,17 +47,11 @@
       <li>Within one working day we e-mail your download link and personal licence key.</li>
       <li>Install, paste the key into the app and drop in your first movie.</li>
     </ol>
-    <p>A question, or no e-mail yet? <a class="link" href="mailto:support@moviedoctor.example">Email support</a></p>
+    <p>A question, or no e-mail yet? <a class="link" href="mailto:support@tamhir.co.il">Email support</a></p>
     <p><a class="link" href="en.html">Back to the home page</a></p>
   </section>
 </div>
 </main>
-<script>
-  if (new URLSearchParams(location.search).get('lang') === 'en') {
-    document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr';
-    document.getElementById('he').hidden = true; document.getElementById('en').hidden = false;
-    document.title = 'Movie Doctor: thank you for your order';
-  }
-</script>
+<script src="assets/site/thanks.js"></script>
 </body>
 </html>
