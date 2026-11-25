@@ -50,8 +50,6 @@
 <script src="assets/backgrounds/backgrounds.js"></script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/liquid-type/moment.js">
-<link rel="modulepreload" href="assets/moments/marquee-row/moment.js">
 <style>
   /* page CSS: the hero window's place in its frame, one --p-h per card group */
   .hero__media .stage { position: absolute; inset: 0; }
@@ -99,37 +97,7 @@
     <a class="skip-link" href="#top">Skip to content</a>
     <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">M</span>Movie Doctor</a>
     <nav class="nav__links" aria-label="Main">
-      <div class="nav__item">
-        <a class="nav__link" href="#features">Features <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <div class="menu-col span-3">
-              <p class="t-label">Subtitles</p>
-              <a href="#features">Line-by-line sync<span>Every line on its sentence</span></a>
-              <a href="#features">Missing lines<span>Translated, added in yellow</span></a>
-              <a href="#features">Hebrew punctuation<span>Reads right on any TV</span></a>
-            </div>
-            <div class="menu-col span-3">
-              <p class="t-label">Sound and file</p>
-              <a href="#features">Lip sync check<span>Sound measured against lips</span></a>
-              <a href="#features">File health<span>Damage and TV problems</span></a>
-              <a href="#season">Folder check<span>A whole folder of videos at once</span></a>
-            </div>
-            <a class="menu-card span-3 start-10" href="#season">
-              <div class="panel"><div class="stage stage--fade-br"><div class="at-corner" style="--ax:20px;--ay:20px;width:300px">
-                <div class="piece"><div class="health">
-                  <div class="health__row"><span>Episode 13</span><span class="bad">6.2 s late</span></div>
-                  <div class="health__row"><span>Episode 14</span><span class="bad">6.0 s late</span></div>
-                  <div class="health__row"><span>Episode 12</span><span class="ok">in sync</span></div>
-                </div></div>
-              </div></div></div>
-              <span class="t-card">Folder check</span>
-              <span class="t-small muted">Every video, one button</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="nav__item"><a class="nav__link" href="#season">Folders</a></div>
+      <div class="nav__item"><a class="nav__link" href="#fixes">What it fixes</a></div>
       <div class="nav__item"><a class="nav__link" href="#price">Price</a></div>
       <div class="nav__item"><a class="nav__link" href="#faq">Questions</a></div>
     </nav>
@@ -150,10 +118,10 @@
         <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>For Windows 10 and 11 · works without internet</p>
         <h1 id="hero-h">Fixes late subtitles and sound in one click</h1>
         <p class="hero__lead">You press play and the words appear before anyone speaks. Drop the video into Movie Doctor: it finds exactly where it drifts and saves a copy that plays right.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#price">Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#how">See how it works</a></div>
+        <div class="btn-row"><a class="btn btn--primary" href="#price">Buy Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#fixes">See what it fixes</a></div>
         <dl class="hero-facts">
           <div><dt>Price</dt><dd>$39 once, no subscription</dd></div>
-          <div><dt>A 2-hour video</dt><dd>about 4 min<sup><a href="#note-1" aria-label="Note 1">1</a></sup></dd></div>
+          <div><dt>Not for you?</dt><dd>full refund, 14 days</dd></div>
           <div><dt>Your files</dt><dd>never leave your PC</dd></div>
         </dl>
       </div>
@@ -185,197 +153,35 @@
     </div></div>
   </section>
 
-  <section class="section" id="season" aria-labelledby="season-h">
+  <section class="section" id="fixes" aria-labelledby="fixes-h">
     <div class="wrap">
-      <div class="grid grid--top">
-        <h2 class="span-5" id="season-h">Ten episodes out of sync, fixed with one button</h2>
-        <div class="span-6 start-7 stack-4">
-          <p>Drop a whole folder. Movie Doctor checks one episode after another, tells you which ones are off and by how much, and fixes them all together. You can go and make coffee.</p>
-          <a class="link" href="#how">See the three steps</a>
-        </div>
+      <div class="section-head">
+        <h2 id="fixes-h">What Movie Doctor fixes. <span class="muted">In three steps, with no settings.</span></h2>
       </div>
-      <div class="season ui fill" role="img" aria-label="Folder check of 22 episodes: episodes 1 to 12 in sync, episodes 13 to 22 have sound about 6 seconds late; episode 14 is open and being fixed" data-ui-pause-host>
-        <div class="season__pane season__pane--list">
-          <div class="ep-head"><span>Episode</span><span>Result</span><span></span></div>
-          <div class="ep"><span class="ep__n">E09</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
-          <div class="ep"><span class="ep__n">E10</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
-          <div class="ep"><span class="ep__n">E11</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
-          <div class="ep"><span class="ep__n">E12</span><span>Sound and subtitles</span><span class="ep__state ep__state--ok">in sync</span></div>
-          <div class="ep"><span class="ep__n">E13</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep is-open"><span class="ep__n">E14</span><span>Sound 6.0 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep"><span class="ep__n">E15</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep"><span class="ep__n">E16</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep"><span class="ep__n">E17</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep"><span class="ep__n">E18</span><span>Sound 6.3 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep"><span class="ep__n">E19</span><span>Sound 6.2 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-          <div class="ep"><span class="ep__n">E20</span><span>Sound 6.3 s late</span><span class="ep__state ep__state--fix">can be fixed</span></div>
-        </div>
-        <div class="season__pane season__pane--open" data-m-loop style="--m-cycle: 3.6s">
-          <div class="open">
-            <div class="open__title">Episode 14: the sound comes 6.0 s late</div>
-            <div class="open__meta">Measured from the burned-in subtitles, confirmed by the shared intro with episode 1</div>
-            <div class="track">
-              <div class="track__row"><span>Picture</span><span class="track__lane"><i style="left:6%;width:14%"></i><i style="left:28%;width:9%"></i><i style="left:44%;width:18%"></i><i style="left:70%;width:12%"></i></span></div>
-              <div class="track__row"><span>Sound</span><span class="track__lane track__lane--sound"><i style="left:6%;width:14%"></i><i style="left:28%;width:9%"></i><i style="left:44%;width:18%"></i><i style="left:70%;width:12%"></i></span></div>
-            </div>
-            <div class="mdw__card"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">Sound 6.0 s late from the first minute</span><br><span class="mdw__d">The sound is moved 6.0 s earlier. The picture is copied as it is, so nothing is re-encoded.</span></span></div>
-            <div class="mdw__card"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">Confirmed by the shared intro</span><br><span class="mdw__d">The intro music comes 6.3 s after its picture, compared with episode 1.</span></span></div>
-            <div class="progress" aria-hidden="true"><i></i></div>
-            <div class="mdw__foot" style="padding:0"><span class="mdw__btn">Fix everything that can be fixed</span><span class="mdw__ghost">10 episodes</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="original" data-statement aria-labelledby="original-h">
-    <div class="wrap">
-      <div data-moment="liquid-type" class="section-head" style="max-width:none">
-        <h2 class="mo-lt__type t-display" id="original-h">Your original file stays untouched</h2>
-        <p>Movie Doctor never writes over anything. It saves a new copy next to the original. Not happy? Delete the copy and nothing has changed.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section g2" id="features" aria-labelledby="features-h">
-    <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="features-h">Everything that ruins a viewing, fixed. <span class="muted">And it tells you what it did, in plain words.</span></h2>
-        </div>
-        <div class="grid">
-          <article class="card card--row card--open span-6">
-            <h3>Every subtitle lands on its sentence</h3>
-            <p>It listens to what is said, so even when a scene was cut or added, the lines get back on time.</p>
-            <div class="panel" data-fx="grain-gradient" data-fx-seed="21" data-fx-params='{"drift":0}'>
-              <div class="stage stage--fade-br"><div class="at-corner" style="--ax:32px;--ay:40px;width:540px" data-m-loop>
-                <div class="piece timeline">
-                  <div class="timeline__row"><span>Speech</span><span class="timeline__lane"><i style="left:4%;width:10%"></i><i style="left:20%;width:13%"></i><i style="left:39%;width:8%"></i><i style="left:58%;width:12%"></i><i style="left:76%;width:10%"></i></span></div>
-                  <div class="timeline__row"><span>Subtitles</span><span class="timeline__lane timeline__lane--subs"><i style="left:4%;width:10%"></i><i style="left:20%;width:13%"></i><i style="left:39%;width:8%"></i><i class="is-late" style="left:58%;width:12%"></i><i class="is-late" style="left:76%;width:10%"></i><span class="timeline__cut" style="left:52%"></span></span></div>
-                  <div class="timeline__row"><span></span><span class="timeline__note">26:53 cut found, lines after it moved 32.8 s</span></div>
-                  <div class="subs" style="margin-top:8px">
-                    <div class="sub"><span class="sub__t">26:41</span><span class="sub__x">So how did the channel start?</span></div>
-                    <div class="sub"><span class="sub__t">26:47</span><span class="sub__x">With one phone and a lamp.</span></div>
-                    <div class="sub"><span class="sub__t">27:26</span><span class="sub__x">And the first video? <span class="ok" style="font-family:var(--font-mono);font-size:11.5px">moved +32.8 s</span></span></div>
-                    <div class="sub"><span class="sub__t">27:31</span><span class="sub__x">Forty views, all family. <span class="ok" style="font-family:var(--font-mono);font-size:11.5px">moved +32.8 s</span></span></div>
-                  </div>
-                </div>
-              </div></div>
-            </div>
+      <div class="grid fixes">
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--subs"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 14.5h5M13.5 14.5h4M6.5 11h3M11.5 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>Subtitles that come early or late</h3><p>Even when they start drifting halfway through the video.</p></div>
           </article>
-          <article class="card card--row card--open span-6">
-            <h3>Fills in missing lines</h3>
-            <p>Someone speaks and there is no subtitle? It writes the missing line, in yellow so you know.</p>
-            <div class="panel" data-fx="grain-gradient" data-fx-seed="22" data-fx-params='{"drift":0}'>
-              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-                <div class="piece subs">
-                  <div class="sub"><span class="sub__t">41:07</span><span class="sub__x">Today we fix the kitchen tap.</span></div>
-                  <div class="sub sub--new"><span class="sub__t">41:10</span><span class="sub__x">First, close the water.</span></div>
-                  <div class="sub"><span class="sub__t">41:13</span><span class="sub__x">It is under the sink, on the right.</span></div>
-                  <div class="sub sub--new"><span class="sub__t">41:16</span><span class="sub__x">Now take out the old seal.</span></div>
-                  <div class="sub"><span class="sub__t">41:20</span><span class="sub__x">You need a 17 mm spanner.</span></div>
-                  <div class="sub sub--new"><span class="sub__t">41:23</span><span class="sub__x">Turn it slowly.</span></div>
-                  <div class="sub"><span class="sub__t">41:27</span><span class="sub__x">And that is it.</span></div>
-                </div>
-              </div></div>
-            </div>
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--lips"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c2.5-4 6-5 9-2 3-3 6.5-2 9 2-2.5 4-6 5.5-9 5.5S5.5 16 3 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><h3>Sound that doesn't match the lips</h3><p>It measures how far the voice is off and moves the sound back.</p></div>
           </article>
-        </div>
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--lines"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h10M4 16h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 13v6M14 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>Lines nobody translated</h3><p>They are added in yellow, so you know which ones.</p></div>
+          </article>
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--heb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h9l3 3v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="17" r="1.6" fill="currentColor"/><path d="M10 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>Hebrew punctuation upside down</h3><p>Full stops back at the end. Reads right on a PC, a phone and a TV.</p></div>
+          </article>
       </div>
-      <div class="grid">
-        <article class="card card--row card--open span-4">
-          <h3>Puts the voice back on the lips</h3>
-          <p>When faces or subtitles are on screen, it measures how far the voice is off and moves the sound back.</p>
-          <div class="panel" data-fx="grain-gradient" data-fx-seed="23" data-fx-params='{"drift":0}'>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-              <div class="piece lips">
-                <div class="lips__wave" aria-hidden="true"><i style="height:20%"></i><i style="height:45%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:30%"></i><i style="height:65%"></i><i style="height:95%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:40%"></i><i style="height:25%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:45%"></i><i style="height:30%"></i><i style="height:60%"></i></div>
-                <div class="lips__read"><span>Scene 1 +0.08 s</span><span>Scene 2 +0.06 s</span></div>
-                <div class="lips__read"><span>Scene 3 +0.09 s</span><b>in sync</b></div>
-                <div class="lips__wave" aria-hidden="true"><i style="height:35%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:85%"></i><i style="height:50%"></i><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:90%"></i><i style="height:55%"></i><i style="height:25%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:75%"></i><i style="height:30%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:35%"></i></div>
-                <div class="lips__read"><span>Episode 14, burned-in subtitles</span><span class="bad">+6.0 s</span></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <h3>Hebrew that reads right</h3>
-          <p>No more full stops at the start of the line. Old subtitles read correctly on a PC, a phone and a TV.</p>
-          <div class="panel" data-fx="grain-gradient" data-fx-seed="24" data-fx-params='{"drift":0}'>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-              <div class="piece punct" lang="he">
-                <div class="punct__row"><span class="punct__bad">.איפה היית</span><span class="punct__tag">before</span></div>
-                <div class="punct__row"><span>איפה היית.</span><span class="punct__tag">after</span></div>
-                <div class="punct__row"><span class="punct__bad">?באמת ,כן</span><span class="punct__tag">before</span></div>
-                <div class="punct__row"><span>כן, באמת?</span><span class="punct__tag">after</span></div>
-                <div class="punct__row"><span class="punct__bad">!עכשיו ,לך</span><span class="punct__tag">before</span></div>
-                <div class="punct__row"><span>לך, עכשיו!</span><span class="punct__tag">after</span></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4 is-phone-skip">
-          <h3>Tells you if the file is broken</h3>
-          <p>A damaged file, sound your TV won't play, or just a slow PC? You'll know which one, and what to do.</p>
-          <div class="panel" data-fx="grain-gradient" data-fx-seed="25" data-fx-params='{"drift":0}'>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-              <div class="piece health">
-                <div class="health__row"><span>Timestamps</span><span class="ok">regular</span></div>
-                <div class="health__row"><span>Frames decoded</span><span class="ok">no errors</span></div>
-                <div class="health__row"><span>Sound format</span><span class="warn">DTS: adds AAC</span></div>
-                <div class="health__row"><span>Loudness</span><span class="warn">quiet dialogue</span></div>
-                <div class="health__row"><span>Frame rate</span><span class="ok">23.976, constant</span></div>
-                <div class="health__row"><span>Interlacing</span><span class="ok">none</span></div>
-                <div class="health__row"><span>This PC plays it</span><span class="ok">27x real time</span></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="how" aria-labelledby="how-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="how-h">Three steps, no settings</h2></div>
-      <div class="grid">
-        <article class="card card--row card--open span-4">
-          <span class="step-num">1</span>
-          <h3>Drop the video</h3>
-          <p>Or a whole folder. Subtitles inside the file or next to it both work.</p>
-          <div class="panel" data-ui-pause-host>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
-              <div class="piece"><div class="drop"><b>Drop a video or a folder</b><span>MKV, MP4, AVI and more</span><span class="drop__file">Course videos (22 files)</span></div></div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <span class="step-num">2</span>
-          <h3>Read what it found</h3>
-          <p>In normal words: what is off, where, and by how much.</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
-              <div class="piece"><div class="mdw__verdict" style="color:#f0645a;font-size:17px">We found a problem we can fix</div><div class="mdw__d" style="margin-top:6px">Until 3:01 the subtitles are fine. From 3:01 they show 17.9 s early.</div><div class="health" style="margin-top:12px"><div class="health__row"><span>Sound</span><span class="ok">in sync</span></div><div class="health__row"><span>File</span><span class="ok">healthy</span></div></div></div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <span class="step-num">3</span>
-          <h3>Press Fix</h3>
-          <p>A fixed copy is saved. Three short clips let you see it with your own eyes.</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
-              <div class="piece"><div class="health"><div class="health__row"><span>Clip at 26:53</span><span class="ok">perfect</span></div><div class="health__row"><span>Clip at 58:10</span><span class="ok">perfect</span></div><div class="health__row"><span>interview.fixed.mp4</span><span class="ok">saved</span></div></div></div>
-            </div></div>
-          </div>
-        </article>
-      </div>
-      <div class="mo-row marquee">
-        <p class="t-label muted">Opens</p>
-        <div data-moment="marquee-row" data-moment-opts='{"speed": 32}'>
-          <ul class="mo-mq__track"><li>MKV</li><li>MP4</li><li>AVI</li><li>MOV</li><li>M4V</li><li>TS</li><li>M2TS</li><li>WMV</li><li>WebM</li><li>MPG</li><li>SRT</li><li>ASS</li><li>SSA</li></ul>
-        </div>
-      </div>
+      <ol class="steps-line">
+        <li><b>1</b> Drop the video</li>
+        <li><b>2</b> Read what it found</li>
+        <li><b>3</b> Press Fix</li>
+      </ol>
+      <p class="fixes__note">Your original file stays untouched. A fixed copy is saved next to it.</p>
     </div>
   </section>
 
@@ -384,7 +190,7 @@
       <div class="grid">
         <div class="span-4 stack-4">
           <h2 id="price-h">One price. <span class="muted">Yours for good.</span></h2>
-          <p>$39, once. No subscription and no monthly fee. Every version 1 update is included, and you try everything free for 14 days before you decide.</p>
+          <p>$39, once. No subscription and no monthly fee. Every version 1 update is included.</p>
           <div class="after-pay">
             <p>1. Pay with PayPal or a credit card.</p>
             <p>2. Your licence key and download link arrive by e-mail within minutes.</p>
@@ -412,56 +218,22 @@
             <p class="pay__msg t-small" data-pay-msg role="status"></p>
           </div>
           <ul class="checks">
-            <li>14 days free, with everything</li>
-            <li>Checking stays free forever</li>
+            <li>Every version 1 update included</li>
             <li>Not for you? Full refund within 14 days</li>
             <li>PayPal or any credit card</li>
           </ul>
         </article>
-        <article class="card card--plan span-4 start-9">
-          <h3>Your computer</h3>
-          <p class="muted">What Movie Doctor needs</p>
-          <p class="price"><span class="t-stat">Windows</span> <span class="t-small muted">10 or 11, 64-bit</span></p>
-          <div class="hw-logos"><img class="ic ic-40" src="assets/icons/windows.svg" alt="Windows" width="40" height="40"><img class="ic ic-40 ic-wide" src="assets/icons/nvidia.svg" alt="Nvidia" width="40" height="8"><img class="ic ic-40 ic-wide ic-ink" src="assets/icons/amd.svg" alt="AMD" width="40" height="10"><img class="ic ic-40 ic-wide" src="assets/icons/intel.svg" alt="Intel" width="40" height="17"></div>
-          <ul class="checks">
-            <li>NVIDIA graphics: full speed</li>
-            <li>AMD or Intel graphics, or older PCs: lighter modes</li>
-            <li>10 GB free for the AI models</li>
-            <li>Internet only for their first download</li>
-          </ul>
-        </article>
+        <div class="faq span-4 start-9" id="faq">
+          <h3 class="faq__title">Questions</h3>
+          <div class="faq__item"><h3>Does it work without internet?</h3><p>Yes. After one download of about 10 GB, everything runs on your PC. Nothing is uploaded.</p></div>
+          <div class="faq__item"><h3>What does my computer need?</h3><p>Windows 10 or 11. An NVIDIA graphics card makes it fastest; without one it works too, just slower.</p></div>
+          <div class="faq__item"><h3>Do I need to know about computers?</h3><p>No. You drop a file and press one button. Everything is explained in normal words.</p></div>
+          <div class="faq__item"><h3>And if it doesn't help with my file?</h3><p>Write to us within 14 days and you get all $39 back. No questions, no forms.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="faq" aria-labelledby="faq-h">
-    <div class="wrap">
-      <div class="grid grid--top fill">
-        <div class="span-5 stack-4">
-          <h2 id="faq-h">Questions</h2>
-          <p class="muted">Anything else, write to us.</p>
-          <a class="link" href="mailto:support@michael-atias.co.il">Email support</a>
-          <div class="piece copied" role="img" aria-label="The text Movie Doctor copies with its Copy results button, ready to paste into an e-mail">
-            <div class="copied__head"><span>Copy results</span><span class="ok">copied</span></div>
-            <pre>Movie Doctor - interview.mp4
-We found a problem we can fix
-x Subtitles slip at 26:53
-  From there they show 32.8 s early.
-v Sound matches the lips
-v The file is healthy</pre>
-          </div>
-        </div>
-        <div class="faq span-6 start-7">
-          <div class="faq__item"><h3>Does it work without internet?</h3><p>Yes. After a one-time download of the AI models (about 10 GB), every check and fix runs on your PC. Nothing is uploaded.</p></div>
-          <div class="faq__item"><h3>Will it change my original file?</h3><p>No. It saves a new file beside it, ending in .fixed.</p></div>
-          <div class="faq__item"><h3>Do I need to know about computers?</h3><p>No. You drop a file and press one button. Everything it finds is explained in normal words.</p></div>
-          <div class="faq__item"><h3>Is there a Mac version?</h3><p>Not now. Movie Doctor runs on Windows 10 and 11.</p></div>
-          <div class="faq__item"><h3>Can I use it on any video?</h3><p>On videos you made, own or have the right to edit. Movie Doctor never downloads, shares or uploads content.</p></div>
-          <div class="faq__item"><h3>And if it doesn't help with my file?</h3><p>Write to us within 14 days of buying and you get all $39 back. No questions, no forms.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="footer closing footer--statement" id="contact" aria-labelledby="close-h">
@@ -479,14 +251,14 @@ v The file is healthy</pre>
           <a class="nav__logo" href="#top">Movie Doctor</a>
           <p class="footer__lede">Subtitles and sound that land on time, on your own computer.</p>
         </div>
-        <div class="span-2 footer__col"><h3>Product</h3><ul><li><a href="#features">Features</a></li><li><a href="#season">Folder check</a></li><li><a href="#how">How it works</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Buying</h3><ul><li><a href="#price">Price</a></li><li><a href="#faq">Questions</a></li><li><a href="terms.html#refunds-en">Refunds</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Product</h3><ul><li><a href="#fixes">What it fixes</a></li><li><a href="#price">Price</a></li><li><a href="#faq">Questions</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Buying</h3><ul><li><a href="#price">Buy Movie Doctor</a></li><li><a href="terms.html#refunds-en">Refunds</a></li><li><a href="download.html?lang=en">Download</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Legal</h3><ul><li><a href="terms.html#en">Terms</a></li><li><a href="privacy.html#en">Privacy</a></li><li><a href="accessibility.html#en">Accessibility</a></li></ul></div>
         <div class="span-2 footer__col"><h3>Language</h3><ul><li><a href="index.html" hreflang="he" lang="he">עברית</a></li><li><a href="en.html">English</a></li></ul></div>
       </div>
       <div class="footer__legal">
         <span>&copy; 2026 Movie Doctor &nbsp; <a href="terms.html#en">Terms</a> &nbsp; <a href="privacy.html#en">Privacy</a> &nbsp; <a href="accessibility.html#en">Accessibility</a></span>
-        <span class="t-small" id="note-1">1. Measured on a laptop with an NVIDIA RTX 4060, a 2 h 13 min video. Windows, NVIDIA, AMD and Intel are trademarks of their owners.</span>
+        <span class="t-small" id="note-1">Windows, NVIDIA, AMD and Intel are trademarks of their owners.</span>
       </div>
     </div>
   </div>

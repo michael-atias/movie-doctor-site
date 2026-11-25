@@ -50,8 +50,6 @@
 <script src="assets/backgrounds/backgrounds.js"></script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/liquid-type/moment.js">
-<link rel="modulepreload" href="assets/moments/marquee-row/moment.js">
 <style>
   /* page CSS: the hero window's place in its frame, one --p-h per card group */
   .hero__media .stage { position: absolute; inset: 0; }
@@ -99,37 +97,7 @@
     <a class="skip-link" href="#top">דילוג לתוכן</a>
     <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">M</span>Movie Doctor</a>
     <nav class="nav__links" aria-label="ראשי">
-      <div class="nav__item">
-        <a class="nav__link" href="#features">יכולות <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu">
-          <div class="wrap grid">
-            <div class="menu-col span-3">
-              <p class="t-label">כתוביות</p>
-              <a href="#features">סנכרון שורה-שורה<span>כל שורה על המשפט שלה</span></a>
-              <a href="#features">שורות חסרות<span>מתורגמות ומתווספות בצהוב</span></a>
-              <a href="#features">פיסוק בעברית<span>נקרא נכון בכל טלוויזיה</span></a>
-            </div>
-            <div class="menu-col span-3">
-              <p class="t-label">קול וקובץ</p>
-              <a href="#features">בדיקת שפתיים<span>הקול נמדד מול השפתיים</span></a>
-              <a href="#features">תקינות הקובץ<span>נזקים ובעיות בטלוויזיה</span></a>
-              <a href="#season">בדיקת תיקייה<span>תיקייה שלמה של סרטונים בבת אחת</span></a>
-            </div>
-            <a class="menu-card span-3 start-10" href="#season">
-              <div class="panel"><div class="stage stage--fade-br"><div class="at-corner" style="--ax:20px;--ay:20px;width:300px">
-                <div class="piece"><div class="health">
-                  <div class="health__row"><span>פרק 13</span><span class="bad">מאחר ב-6.2 שנ׳</span></div>
-                  <div class="health__row"><span>פרק 14</span><span class="bad">מאחר ב-6.0 שנ׳</span></div>
-                  <div class="health__row"><span>פרק 12</span><span class="ok">מסונכרן</span></div>
-                </div></div>
-              </div></div></div>
-              <span class="t-card">בדיקת תיקייה</span>
-              <span class="t-small muted">כל הסרטונים, כפתור אחד</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="nav__item"><a class="nav__link" href="#season">תיקיות</a></div>
+      <div class="nav__item"><a class="nav__link" href="#fixes">מה זה מתקן</a></div>
       <div class="nav__item"><a class="nav__link" href="#price">מחיר</a></div>
       <div class="nav__item"><a class="nav__link" href="#faq">שאלות</a></div>
     </nav>
@@ -150,10 +118,10 @@
         <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>ל-Windows 10 ו-11 · עובד בלי אינטרנט</p>
         <h1 id="hero-h">מתקן כתוביות וקול שלא בזמן, בלחיצה אחת</h1>
         <p class="hero__lead">לחצת פליי, והכתובית מופיעה לפני שמישהו פתח את הפה. גוררים את הסרטון ל-Movie Doctor: הוא מקשיב לכל משפט, מוצא בדיוק איפה זה מתחיל לזוז, ושומר עותק שמתנגן נכון.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#price">לקנות את Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#how">לראות איך זה עובד</a></div>
+        <div class="btn-row"><a class="btn btn--primary" href="#price">לקנות את Movie Doctor<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#fixes">לראות מה זה מתקן</a></div>
         <dl class="hero-facts">
           <div><dt>מחיר</dt><dd>39 דולר פעם אחת, בלי מנוי</dd></div>
-          <div><dt>סרטון של שעתיים</dt><dd>כ-4 דקות<sup><a href="#note-1" aria-label="הערה 1">1</a></sup></dd></div>
+          <div><dt>לא בשבילך?</dt><dd>החזר מלא, 14 יום</dd></div>
           <div><dt>הקבצים שלך</dt><dd>לא יוצאים מהמחשב</dd></div>
         </dl>
       </div>
@@ -185,197 +153,35 @@
     </div></div>
   </section>
 
-  <section class="section" id="season" aria-labelledby="season-h">
+  <section class="section" id="fixes" aria-labelledby="fixes-h">
     <div class="wrap">
-      <div class="grid grid--top">
-        <h2 class="span-5" id="season-h">עשרה פרקים לא בזמן, מתוקנים בכפתור אחד</h2>
-        <div class="span-6 start-7 stack-4">
-          <p>גוררים תיקייה שלמה. Movie Doctor בודק פרק אחרי פרק, אומר לך איזה מהם לא בזמן ובכמה, ומתקן את כולם יחד. אתה בינתיים יכול להכין קפה.</p>
-          <a class="link" href="#how">לראות את שלושת השלבים</a>
-        </div>
+      <div class="section-head">
+        <h2 id="fixes-h">מה Movie Doctor מתקן. <span class="muted">בשלושה שלבים, בלי הגדרות.</span></h2>
       </div>
-      <div class="season ui fill" role="img" aria-label="בדיקת תיקייה של 22 פרקים: פרקים 1 עד 12 מסונכרנים, בפרקים 13 עד 22 הקול מאחר בכ-6 שניות; פרק 14 פתוח ומתוקן" data-ui-pause-host>
-        <div class="season__pane season__pane--list">
-          <div class="ep-head"><span>פרק</span><span>תוצאה</span><span></span></div>
-          <div class="ep"><span class="ep__n">E09</span><span>קול וכתוביות</span><span class="ep__state ep__state--ok">מסונכרן</span></div>
-          <div class="ep"><span class="ep__n">E10</span><span>קול וכתוביות</span><span class="ep__state ep__state--ok">מסונכרן</span></div>
-          <div class="ep"><span class="ep__n">E11</span><span>קול וכתוביות</span><span class="ep__state ep__state--ok">מסונכרן</span></div>
-          <div class="ep"><span class="ep__n">E12</span><span>קול וכתוביות</span><span class="ep__state ep__state--ok">מסונכרן</span></div>
-          <div class="ep"><span class="ep__n">E13</span><span>הקול מאחר ב-6.2 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep is-open"><span class="ep__n">E14</span><span>הקול מאחר ב-6.0 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep"><span class="ep__n">E15</span><span>הקול מאחר ב-6.2 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep"><span class="ep__n">E16</span><span>הקול מאחר ב-6.2 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep"><span class="ep__n">E17</span><span>הקול מאחר ב-6.2 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep"><span class="ep__n">E18</span><span>הקול מאחר ב-6.3 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep"><span class="ep__n">E19</span><span>הקול מאחר ב-6.2 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-          <div class="ep"><span class="ep__n">E20</span><span>הקול מאחר ב-6.3 שנ׳</span><span class="ep__state ep__state--fix">אפשר לתקן</span></div>
-        </div>
-        <div class="season__pane season__pane--open" data-m-loop style="--m-cycle: 3.6s">
-          <div class="open">
-            <div class="open__title">פרק 14: הקול מאחר ב-6.0 שניות</div>
-            <div class="open__meta">נמדד לפי הכתוביות הצרובות, ואושר בהשוואת הפתיח המשותף לפרק 1</div>
-            <div class="track">
-              <div class="track__row"><span>תמונה</span><span class="track__lane"><i style="left:6%;width:14%"></i><i style="left:28%;width:9%"></i><i style="left:44%;width:18%"></i><i style="left:70%;width:12%"></i></span></div>
-              <div class="track__row"><span>קול</span><span class="track__lane track__lane--sound"><i style="left:6%;width:14%"></i><i style="left:28%;width:9%"></i><i style="left:44%;width:18%"></i><i style="left:70%;width:12%"></i></span></div>
-            </div>
-            <div class="mdw__card"><span class="mdw__ico mdw__ico--bad">✕</span><span><span class="mdw__t">הקול מאחר ב-6.0 שנ׳ מהדקה הראשונה</span><br><span class="mdw__d">הקול מוקדם ב-6.0 שנ׳. התמונה מועתקת כמו שהיא, בלי קידוד מחדש.</span></span></div>
-            <div class="mdw__card"><span class="mdw__ico mdw__ico--ok">✓</span><span><span class="mdw__t">אושר בעזרת הפתיח המשותף</span><br><span class="mdw__d">מוזיקת הפתיח מגיעה 6.3 שנ׳ אחרי התמונה שלה, בהשוואה לפרק 1.</span></span></div>
-            <div class="progress" aria-hidden="true"><i></i></div>
-            <div class="mdw__foot" style="padding:0"><span class="mdw__btn">תקן את כל מה שאפשר</span><span class="mdw__ghost">10 פרקים</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="original" data-statement aria-labelledby="original-h">
-    <div class="wrap">
-      <div data-moment="liquid-type" class="section-head" style="max-width:none">
-        <h2 class="mo-lt__type t-display" id="original-h">הקובץ המקורי שלך נשאר כמו שהוא</h2>
-        <p>Movie Doctor אף פעם לא דורס כלום. הוא שומר עותק חדש ליד המקור. לא אהבת? מוחקים את העותק, וכאילו כלום לא קרה.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section g2" id="features" aria-labelledby="features-h">
-    <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="features-h">כל מה שהורס צפייה, מתוקן. <span class="muted">והוא מסביר מה עשה, במילים פשוטות.</span></h2>
-        </div>
-        <div class="grid">
-          <article class="card card--row card--open span-6">
-            <h3>כל כתובית נוחתת על המשפט שלה</h3>
-            <p>הוא מקשיב למה שנאמר, אז גם כשסצנה נחתכה או נוספה, השורות חוזרות לזמן הנכון.</p>
-            <div class="panel" data-fx="grain-gradient" data-fx-seed="21" data-fx-params='{"drift":0}'>
-              <div class="stage stage--fade-br"><div class="at-corner" style="--ax:32px;--ay:40px;width:540px" data-m-loop>
-                <div class="piece timeline">
-                  <div class="timeline__row"><span>דיבור</span><span class="timeline__lane"><i style="left:4%;width:10%"></i><i style="left:20%;width:13%"></i><i style="left:39%;width:8%"></i><i style="left:58%;width:12%"></i><i style="left:76%;width:10%"></i></span></div>
-                  <div class="timeline__row"><span>כתוביות</span><span class="timeline__lane timeline__lane--subs"><i style="left:4%;width:10%"></i><i style="left:20%;width:13%"></i><i style="left:39%;width:8%"></i><i class="is-late" style="left:58%;width:12%"></i><i class="is-late" style="left:76%;width:10%"></i><span class="timeline__cut" style="left:52%"></span></span></div>
-                  <div class="timeline__row"><span></span><span class="timeline__note">נמצא חיתוך ב-26:53, השורות אחריו הוזזו ב-32.8 שנ׳</span></div>
-                  <div class="subs" style="margin-top:8px">
-                    <div class="sub"><span class="sub__t">26:41</span><span class="sub__x">אז איך הערוץ התחיל?</span></div>
-                    <div class="sub"><span class="sub__t">26:47</span><span class="sub__x">עם טלפון אחד ומנורה.</span></div>
-                    <div class="sub"><span class="sub__t">27:26</span><span class="sub__x">והסרטון הראשון? <span class="ok" style="font-family:var(--font-mono);font-size:11.5px">הוזז ב-32.8 שנ׳</span></span></div>
-                    <div class="sub"><span class="sub__t">27:31</span><span class="sub__x">ארבעים צפיות, כולן מהמשפחה. <span class="ok" style="font-family:var(--font-mono);font-size:11.5px">הוזז ב-32.8 שנ׳</span></span></div>
-                  </div>
-                </div>
-              </div></div>
-            </div>
+      <div class="grid fixes">
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--subs"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 14.5h5M13.5 14.5h4M6.5 11h3M11.5 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>כתוביות שמקדימות או מאחרות</h3><p>גם כשהן מתחילות לזוז באמצע הסרטון.</p></div>
           </article>
-          <article class="card card--row card--open span-6">
-            <h3>משלים שורות חסרות</h3>
-            <p>מישהו מדבר ואין כתובית? הוא כותב את השורה החסרה, בצהוב, כדי שתדע.</p>
-            <div class="panel" data-fx="grain-gradient" data-fx-seed="22" data-fx-params='{"drift":0}'>
-              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-                <div class="piece subs">
-                  <div class="sub"><span class="sub__t">41:07</span><span class="sub__x">היום מתקנים את הברז במטבח.</span></div>
-                  <div class="sub sub--new"><span class="sub__t">41:10</span><span class="sub__x">קודם סוגרים את המים.</span></div>
-                  <div class="sub"><span class="sub__t">41:13</span><span class="sub__x">הוא מתחת לכיור, בצד ימין.</span></div>
-                  <div class="sub sub--new"><span class="sub__t">41:16</span><span class="sub__x">עכשיו מוציאים את האטם הישן.</span></div>
-                  <div class="sub"><span class="sub__t">41:20</span><span class="sub__x">צריך מפתח 17.</span></div>
-                  <div class="sub sub--new"><span class="sub__t">41:23</span><span class="sub__x">מסובבים לאט.</span></div>
-                  <div class="sub"><span class="sub__t">41:27</span><span class="sub__x">וזהו.</span></div>
-                </div>
-              </div></div>
-            </div>
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--lips"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c2.5-4 6-5 9-2 3-3 6.5-2 9 2-2.5 4-6 5.5-9 5.5S5.5 16 3 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.8"/></svg></span>
+            <div><h3>קול שלא תואם לשפתיים</h3><p>הוא מודד בכמה הקול זז ומחזיר אותו למקום.</p></div>
           </article>
-        </div>
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--lines"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 11h10M4 16h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 13v6M14 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>שורות שאף אחד לא תרגם</h3><p>הן נוספות בצהוב, כדי שתדע אילו.</p></div>
+          </article>
+          <article class="fix span-6">
+            <span class="fix__ic fix__ic--heb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h9l3 3v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="17" r="1.6" fill="currentColor"/><path d="M10 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>פיסוק הפוך בעברית</h3><p>הנקודה חוזרת לסוף השורה. נקרא נכון במחשב, בטלפון ובטלוויזיה.</p></div>
+          </article>
       </div>
-      <div class="grid">
-        <article class="card card--row card--open span-4">
-          <h3>מחזיר את הקול לשפתיים</h3>
-          <p>כשרואים פנים או כתוביות על המסך, הוא מודד בכמה הקול זז ומחזיר אותו למקום.</p>
-          <div class="panel" data-fx="grain-gradient" data-fx-seed="23" data-fx-params='{"drift":0}'>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-              <div class="piece lips">
-                <div class="lips__wave" aria-hidden="true"><i style="height:20%"></i><i style="height:45%"></i><i style="height:80%"></i><i style="height:55%"></i><i style="height:30%"></i><i style="height:65%"></i><i style="height:95%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:40%"></i><i style="height:25%"></i><i style="height:55%"></i><i style="height:85%"></i><i style="height:45%"></i><i style="height:30%"></i><i style="height:60%"></i></div>
-                <div class="lips__read"><span>סצנה 1: 0.08 שנ׳</span><span>סצנה 2: 0.06 שנ׳</span></div>
-                <div class="lips__read"><span>סצנה 3: 0.09 שנ׳</span><b>מסונכרן</b></div>
-                <div class="lips__wave" aria-hidden="true"><i style="height:35%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:85%"></i><i style="height:50%"></i><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:90%"></i><i style="height:55%"></i><i style="height:25%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:75%"></i><i style="height:30%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:35%"></i></div>
-                <div class="lips__read"><span>פרק 14, כתוביות צרובות</span><span class="bad">מאחר ב-6.0 שנ׳</span></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <h3>עברית שנקראת נכון</h3>
-          <p>בלי נקודה בתחילת השורה. כתוביות ישנות נקראות נכון במחשב, בטלפון ובטלוויזיה.</p>
-          <div class="panel" data-fx="grain-gradient" data-fx-seed="24" data-fx-params='{"drift":0}'>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-              <div class="piece punct" lang="he">
-                <div class="punct__row"><span class="punct__bad">.איפה היית</span><span class="punct__tag">לפני</span></div>
-                <div class="punct__row"><span>איפה היית.</span><span class="punct__tag">אחרי</span></div>
-                <div class="punct__row"><span class="punct__bad">?באמת ,כן</span><span class="punct__tag">לפני</span></div>
-                <div class="punct__row"><span>כן, באמת?</span><span class="punct__tag">אחרי</span></div>
-                <div class="punct__row"><span class="punct__bad">!עכשיו ,לך</span><span class="punct__tag">לפני</span></div>
-                <div class="punct__row"><span>לך, עכשיו!</span><span class="punct__tag">אחרי</span></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4 is-phone-skip">
-          <h3>אומר לך אם הקובץ פגום</h3>
-          <p>קובץ פגום, קול שהטלוויזיה לא מנגנת, או סתם מחשב איטי? תדע מה מהם, ומה לעשות.</p>
-          <div class="panel" data-fx="grain-gradient" data-fx-seed="25" data-fx-params='{"drift":0}'>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:40px">
-              <div class="piece health">
-                <div class="health__row"><span>חותמות זמן</span><span class="ok">תקינות</span></div>
-                <div class="health__row"><span>פענוח פריימים</span><span class="ok">בלי שגיאות</span></div>
-                <div class="health__row"><span>פורמט קול</span><span class="warn">DTS: נוסף AAC</span></div>
-                <div class="health__row"><span>עוצמה</span><span class="warn">דיאלוג שקט</span></div>
-                <div class="health__row"><span>קצב פריימים</span><span class="ok">23.976, קבוע</span></div>
-                <div class="health__row"><span>שזירה</span><span class="ok">אין</span></div>
-                <div class="health__row"><span>המחשב מנגן אותו</span><span class="ok">פי 27 מהנדרש</span></div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="how" aria-labelledby="how-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="how-h">שלושה שלבים, בלי הגדרות</h2></div>
-      <div class="grid">
-        <article class="card card--row card--open span-4">
-          <span class="step-num">1</span>
-          <h3>גוררים את הסרטון</h3>
-          <p>או תיקייה שלמה. כתוביות בתוך הקובץ או לידו, שניהם עובדים.</p>
-          <div class="panel" data-ui-pause-host>
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
-              <div class="piece"><div class="drop"><b>גרור לכאן סרטון או תיקייה</b><span>MKV, MP4, AVI ועוד</span><span class="drop__file">סרטוני הקורס (22 קבצים)</span></div></div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <span class="step-num">2</span>
-          <h3>קוראים מה הוא מצא</h3>
-          <p>במילים רגילות: מה לא בזמן, איפה, ובכמה.</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
-              <div class="piece"><div class="mdw__verdict" style="color:#f0645a;font-size:17px">מצאנו בעיה שאפשר לתקן</div><div class="mdw__d" style="margin-top:6px">עד 3:01 הכתוביות תקינות. מ-3:01 הן מופיעות 17.9 שנ׳ מוקדם מדי.</div><div class="health" style="margin-top:12px"><div class="health__row"><span>קול</span><span class="ok">מסונכרן</span></div><div class="health__row"><span>קובץ</span><span class="ok">תקין</span></div></div></div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <span class="step-num">3</span>
-          <h3>לוחצים על תקן</h3>
-          <p>נשמר עותק מתוקן. שלושה קטעים קצרים מראים לך את זה בעיניים.</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:300px;--ax:24px;--ay:32px">
-              <div class="piece"><div class="health"><div class="health__row"><span>קטע ב-26:53</span><span class="ok">מושלם</span></div><div class="health__row"><span>קטע ב-58:10</span><span class="ok">מושלם</span></div><div class="health__row"><span>interview.fixed.mp4</span><span class="ok">נשמר</span></div></div></div>
-            </div></div>
-          </div>
-        </article>
-      </div>
-      <div class="mo-row marquee">
-        <p class="t-label muted">פותח</p>
-        <div data-moment="marquee-row" data-moment-opts='{"speed": 32}'>
-          <ul class="mo-mq__track"><li>MKV</li><li>MP4</li><li>AVI</li><li>MOV</li><li>M4V</li><li>TS</li><li>M2TS</li><li>WMV</li><li>WebM</li><li>MPG</li><li>SRT</li><li>ASS</li><li>SSA</li></ul>
-        </div>
-      </div>
+      <ol class="steps-line">
+        <li><b>1</b> גוררים את הסרטון</li>
+        <li><b>2</b> קוראים מה הוא מצא</li>
+        <li><b>3</b> לוחצים תקן</li>
+      </ol>
+      <p class="fixes__note">הקובץ המקורי נשאר כמו שהוא. עותק מתוקן נשמר לידו.</p>
     </div>
   </section>
 
@@ -384,7 +190,7 @@
       <div class="grid">
         <div class="span-4 stack-4">
           <h2 id="price-h">מחיר אחד. <span class="muted">שלך לתמיד.</span></h2>
-          <p>39 דולר, פעם אחת. בלי מנוי ובלי תשלום חודשי. כל העדכונים של גרסה 1 כלולים, ואת הכול מנסים 14 יום בחינם לפני שמחליטים.</p>
+          <p>39 דולר, פעם אחת. בלי מנוי ובלי תשלום חודשי. כל העדכונים של גרסה 1 כלולים.</p>
           <div class="after-pay">
             <p>1. משלמים ב-PayPal או בכרטיס אשראי.</p>
             <p>2. מפתח הרישיון וקישור ההורדה מגיעים במייל תוך דקות.</p>
@@ -412,56 +218,22 @@
             <p class="pay__msg t-small" data-pay-msg role="status"></p>
           </div>
           <ul class="checks">
-            <li>14 יום חינם, עם כל היכולות</li>
-            <li>הבדיקה נשארת חינם לתמיד</li>
+            <li>כל העדכונים של גרסה 1 כלולים</li>
             <li>לא בשבילך? החזר מלא תוך 14 יום</li>
             <li>PayPal או כל כרטיס אשראי</li>
           </ul>
         </article>
-        <article class="card card--plan span-4 start-9">
-          <h3>המחשב שלך</h3>
-          <p class="muted">מה Movie Doctor צריך</p>
-          <p class="price"><span class="t-stat">Windows</span> <span class="t-small muted">10 או 11, 64 ביט</span></p>
-          <div class="hw-logos"><img class="ic ic-40" src="assets/icons/windows.svg" alt="Windows" width="40" height="40"><img class="ic ic-40 ic-wide" src="assets/icons/nvidia.svg" alt="Nvidia" width="40" height="8"><img class="ic ic-40 ic-wide ic-ink" src="assets/icons/amd.svg" alt="AMD" width="40" height="10"><img class="ic ic-40 ic-wide" src="assets/icons/intel.svg" alt="Intel" width="40" height="17"></div>
-          <ul class="checks">
-            <li>כרטיס מסך NVIDIA: מהירות מלאה</li>
-            <li>AMD או Intel, או מחשב ישן: מצבים קלים יותר</li>
-            <li>10GB פנויים למודלי ה-AI</li>
-            <li>אינטרנט רק להורדה הראשונה שלהם</li>
-          </ul>
-        </article>
+        <div class="faq span-4 start-9" id="faq">
+          <h3 class="faq__title">שאלות</h3>
+          <div class="faq__item"><h3>זה עובד בלי אינטרנט?</h3><p>כן. אחרי הורדה אחת של כ-10GB, הכול רץ במחשב שלך. שום דבר לא עולה לרשת.</p></div>
+          <div class="faq__item"><h3>מה המחשב צריך?</h3><p>Windows 10 או 11. עם כרטיס מסך של NVIDIA זה הכי מהיר; בלעדיו זה עובד גם, רק לאט יותר.</p></div>
+          <div class="faq__item"><h3>צריך להבין במחשבים?</h3><p>לא. גוררים קובץ ולוחצים על כפתור אחד. הכול מוסבר במילים רגילות.</p></div>
+          <div class="faq__item"><h3>ואם זה לא עוזר לקובץ שלי?</h3><p>כותבים לנו תוך 14 יום ומקבלים את כל 39 הדולר בחזרה. בלי שאלות ובלי טפסים.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="faq" aria-labelledby="faq-h">
-    <div class="wrap">
-      <div class="grid grid--top fill">
-        <div class="span-5 stack-4">
-          <h2 id="faq-h">שאלות</h2>
-          <p class="muted">יש עוד משהו? כתבו לנו.</p>
-          <a class="link" href="mailto:support@michael-atias.co.il">לכתוב לתמיכה</a>
-          <div class="piece copied" role="img" aria-label="הטקסט ש-Movie Doctor מעתיק בכפתור העתק תוצאות, מוכן להדבקה במייל">
-            <div class="copied__head"><span>העתק תוצאות</span><span class="ok">הועתק</span></div>
-            <pre>Movie Doctor - interview.mp4
-מצאנו בעיה שאפשר לתקן
-x הכתוביות זזות ב-26:53
-  מכאן הן מופיעות 32.8 שנ׳ מוקדם מדי.
-v הקול תואם לשפתיים
-v הקובץ תקין</pre>
-          </div>
-        </div>
-        <div class="faq span-6 start-7">
-          <div class="faq__item"><h3>זה עובד בלי אינטרנט?</h3><p>כן. אחרי הורדה חד-פעמית של מודלי ה-AI (כ-10GB), כל בדיקה וכל תיקון רצים במחשב שלך. שום דבר לא עולה לרשת.</p></div>
-          <div class="faq__item"><h3>זה ישנה את הקובץ המקורי?</h3><p>לא. נשמר קובץ חדש לידו, עם הסיומת fixed.</p></div>
-          <div class="faq__item"><h3>צריך להבין במחשבים?</h3><p>לא. גוררים קובץ ולוחצים על כפתור אחד. כל מה שהוא מוצא מוסבר במילים רגילות.</p></div>
-          <div class="faq__item"><h3>יש גרסה למק?</h3><p>לא כרגע. Movie Doctor עובד על Windows 10 ו-11.</p></div>
-          <div class="faq__item"><h3>אפשר להשתמש בזה על כל סרטון?</h3><p>על סרטונים שצילמת, שבבעלותך או שיש לך זכות לערוך. Movie Doctor לא מוריד, לא משתף ולא מעלה שום תוכן.</p></div>
-          <div class="faq__item"><h3>ואם זה לא עוזר לקובץ שלי?</h3><p>כותבים לנו תוך 14 יום מהקנייה ומקבלים את כל 39 הדולר בחזרה. בלי שאלות ובלי טפסים.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="footer closing footer--statement" id="contact" aria-labelledby="close-h">
@@ -479,14 +251,14 @@ v הקובץ תקין</pre>
           <a class="nav__logo" href="#top">Movie Doctor</a>
           <p class="footer__lede">כתוביות וקול שמגיעים בזמן, במחשב שלך.</p>
         </div>
-        <div class="span-2 footer__col"><h3>המוצר</h3><ul><li><a href="#features">יכולות</a></li><li><a href="#season">בדיקת תיקייה</a></li><li><a href="#how">איך זה עובד</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>רכישה</h3><ul><li><a href="#price">מחיר</a></li><li><a href="#faq">שאלות</a></li><li><a href="terms.html#refunds">החזרים</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>המוצר</h3><ul><li><a href="#fixes">מה זה מתקן</a></li><li><a href="#price">מחיר</a></li><li><a href="#faq">שאלות</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>רכישה</h3><ul><li><a href="#price">לקנות את Movie Doctor</a></li><li><a href="terms.html#refunds">החזרים</a></li><li><a href="download.html">הורדה</a></li></ul></div>
         <div class="span-2 footer__col"><h3>משפטי</h3><ul><li><a href="terms.html">תנאי שימוש ורכישה</a></li><li><a href="privacy.html">פרטיות</a></li><li><a href="accessibility.html">הצהרת נגישות</a></li></ul></div>
         <div class="span-2 footer__col"><h3>שפה</h3><ul><li><a href="index.html" hreflang="he" lang="he">עברית</a></li><li><a href="en.html">English</a></li></ul></div>
       </div>
       <div class="footer__legal">
         <span>&copy; 2026 Movie Doctor &nbsp; <a href="terms.html">תנאים</a> &nbsp; <a href="privacy.html">פרטיות</a> &nbsp; <a href="accessibility.html">נגישות</a></span>
-        <span class="t-small" id="note-1">1. נמדד במחשב נייד עם NVIDIA RTX 4060, בסרטון של שעתיים ו-13 דקות. Windows, ‏NVIDIA, ‏AMD ו-Intel הם סימנים מסחריים של בעליהם.</span>
+        <span class="t-small" id="note-1">Windows, ‏NVIDIA, ‏AMD ו-Intel הם סימנים מסחריים של בעליהם.</span>
       </div>
     </div>
   </div>
