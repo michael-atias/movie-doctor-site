@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-type="software" data-radius="soft" data-buttons="solid">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script src="assets/site/frame.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Subtitles drift out of sync halfway through: why and how to fix | Movie Doctor</title>
+<meta name="description" content="On time at the start, late by the middle? The two causes (frame rate, cut or added scenes) and how to fix each one.">
+<link rel="canonical" href="https://moviedoctor.michael-atias.co.il/help-subtitles-drift-en.html">
+<link rel="alternate" hreflang="he" href="https://moviedoctor.michael-atias.co.il/help-subtitles-drift.html">
+<link rel="alternate" hreflang="en" href="https://moviedoctor.michael-atias.co.il/help-subtitles-drift-en.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Subtitles drift out of sync halfway through: why and how to fix | Movie Doctor">
+<meta property="og:description" content="On time at the start, late by the middle? The two causes (frame rate, cut or added scenes) and how to fix each one.">
+<meta property="og:url" content="https://moviedoctor.michael-atias.co.il/help-subtitles-drift-en.html">
+<meta property="og:image" content="https://moviedoctor.michael-atias.co.il/share.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#eeeeeb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;600&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<style>
+:root {
+  --p-bg: #eeeeeb; --p-surface: #e1e1dd; --p-ink: #1c1d1f; --p-muted: #5c5e62;
+  --p-accent: #c2501b; --p-accent-ink: #ffffff; --p-action: #c2501b; --p-action-ink: #ffffff;
+  --font-display: "Instrument Sans", "IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --font-text: "Instrument Sans", "IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --display-weight: 500; --display-tracking: -0.012em;
+}
+.cta { margin: 40px 0 8px; padding: 24px; border-radius: 16px; background: var(--p-surface); }
+.cta h2 { margin-top: 0; }
+.cta .btn { margin-top: 8px; }
+.crumbs { font-size: 14px; color: var(--p-muted); margin-bottom: 8px; }
+.crumbs a { color: inherit; }
+.related li { margin: 6px 0; }
+kbd { font: inherit; font-size: 0.9em; padding: 1px 6px; border-radius: 6px; background: var(--p-surface); border: 1px solid #c9c9c4; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Subtitles that drift out of sync halfway through","inLanguage":"en","dateModified":"2026-11-25","author":{"@type":"Organization","name":"Movie Doctor"},"publisher":{"@type":"Organization","name":"Movie Doctor"},"mainEntityOfPage":"https://moviedoctor.michael-atias.co.il/help-subtitles-drift-en.html"}</script>
+<link rel="stylesheet" href="assets/site/legal.css">
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to content</a>
+<header class="legal-nav"><div class="wrap"><a class="nav__logo" href="en.html"><span class="mark mark--initial" aria-hidden="true">M</span>Movie Doctor</a><a class="link" href="help-subtitles-drift.html" lang="he">עברית</a></div></header>
+<main class="legal" id="top">
+<div class="wrap">
+  <p class="crumbs"><a href="en.html">Movie Doctor</a> / <a href="help-en.html">Guides</a></p>
+  <h1>Subtitles that drift out of sync halfway through</h1>
+  <p class="meta">Updated: 25 November 2026</p>
+<p>The first minutes are perfect. Then, somewhere in the middle, the subtitles start running early or late, and the gap only grows. Shifting every line by one amount will not help here, because the offset is not constant.</p>
+<h2>The two main causes</h2>
+<h3>1. A different frame rate</h3>
+<p>If the subtitles were timed for a 25 fps video and yours runs at 23.976 fps (or the other way round), the gap grows slowly and evenly through the whole video. After an hour it can reach minutes.</p>
+<p><strong>How to tell:</strong> the gap grows gradually, with no jumps.<br><strong>How to fix:</strong> in Subtitle Edit, choose Synchronization, then Change frame rate, convert from the old rate to the new one, and save.</p>
+<h3>2. A scene added or cut</h3>
+<p>If your version has a scene the subtitle version did not, everything is on time until that scene, and from there everything is off by the same amount.</p>
+<p><strong>How to tell:</strong> the gap jumps at one point and stays fixed after it, sometimes at more than one point.<br><strong>How to fix:</strong> Subtitle Edit has Point sync: mark a few lines at the right time across the video and it works out the rest. It works, but it is slow, because you find every point by hand.</p>
+<h2>Why it is hard by hand</h2>
+<p>You first have to find out which of the two happened, where, and by how much. In a two-hour video that can mean half an hour of skipping back and forth. If both causes are mixed, it gets harder still.</p>
+  <div class="cta"><h2>Want it done for you?</h2><p>Movie Doctor listens to the speech in your video, finds exactly where the subtitles or the sound slip, and saves a fixed copy, even when the offset changes halfway through. A Windows app that works offline, $39 once.</p><a class="btn btn--primary" href="en.html#fixes">See what Movie Doctor fixes</a></div>
+  <h2>More guides</h2>
+  <ul class="related"><li><a class="link" href="help-subtitle-delay-en.html">Subtitles too early or too late: how to fix them</a></li><li><a class="link" href="help-audio-sync-en.html">Audio out of sync with the lips</a></li><li><a class="link" href="help-hebrew-punctuation-en.html">Hebrew subtitles with punctuation in the wrong place</a></li><li><a class="link" href="help-sync-srt-en.html">How to sync an SRT file to a video</a></li></ul>
+
+</div>
+</main>
+</body>
+</html>

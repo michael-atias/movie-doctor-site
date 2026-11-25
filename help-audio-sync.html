@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-type="software" data-radius="soft" data-buttons="solid">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script src="assets/site/frame.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>הקול לא תואם לשפתיים: איך מתקנים סנכרון קול ותמונה | Movie Doctor</title>
+<meta name="description" content="הקול מקדים או מאחר לתנועת הפה? למה זה קורה (במיוחד בסרטונים מהטלפון), איך מתקנים ב-VLC, ואיך שומרים קובץ מתוקן.">
+<link rel="canonical" href="https://moviedoctor.michael-atias.co.il/help-audio-sync.html">
+<link rel="alternate" hreflang="he" href="https://moviedoctor.michael-atias.co.il/help-audio-sync.html">
+<link rel="alternate" hreflang="en" href="https://moviedoctor.michael-atias.co.il/help-audio-sync-en.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="הקול לא תואם לשפתיים: איך מתקנים סנכרון קול ותמונה | Movie Doctor">
+<meta property="og:description" content="הקול מקדים או מאחר לתנועת הפה? למה זה קורה (במיוחד בסרטונים מהטלפון), איך מתקנים ב-VLC, ואיך שומרים קובץ מתוקן.">
+<meta property="og:url" content="https://moviedoctor.michael-atias.co.il/help-audio-sync.html">
+<meta property="og:image" content="https://moviedoctor.michael-atias.co.il/share.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#eeeeeb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;600&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<style>
+:root {
+  --p-bg: #eeeeeb; --p-surface: #e1e1dd; --p-ink: #1c1d1f; --p-muted: #5c5e62;
+  --p-accent: #c2501b; --p-accent-ink: #ffffff; --p-action: #c2501b; --p-action-ink: #ffffff;
+  --font-display: "Instrument Sans", "IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --font-text: "Instrument Sans", "IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --display-weight: 500; --display-tracking: -0.012em;
+}
+.cta { margin: 40px 0 8px; padding: 24px; border-radius: 16px; background: var(--p-surface); }
+.cta h2 { margin-top: 0; }
+.cta .btn { margin-top: 8px; }
+.crumbs { font-size: 14px; color: var(--p-muted); margin-bottom: 8px; }
+.crumbs a { color: inherit; }
+.related li { margin: 6px 0; }
+kbd { font: inherit; font-size: 0.9em; padding: 1px 6px; border-radius: 6px; background: var(--p-surface); border: 1px solid #c9c9c4; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"הקול לא תואם לשפתיים","inLanguage":"he","dateModified":"2026-11-25","author":{"@type":"Organization","name":"Movie Doctor"},"publisher":{"@type":"Organization","name":"Movie Doctor"},"mainEntityOfPage":"https://moviedoctor.michael-atias.co.il/help-audio-sync.html"}</script>
+<link rel="stylesheet" href="assets/site/legal.css">
+</head>
+<body>
+<a class="skip-link" href="#top">דילוג לתוכן</a>
+<header class="legal-nav"><div class="wrap"><a class="nav__logo" href="index.html"><span class="mark mark--initial" aria-hidden="true">M</span>Movie Doctor</a><a class="link" href="help-audio-sync-en.html" lang="en">English</a></div></header>
+<main class="legal" id="top">
+<div class="wrap">
+  <p class="crumbs"><a href="index.html">Movie Doctor</a> / <a href="help.html">מדריכים</a></p>
+  <h1>הקול לא תואם לשפתיים</h1>
+  <p class="meta">עודכן: 25 בנובמבר 2026</p>
+<p>רואים את הפה זז, והמילים מגיעות רגע אחרי. או לפני. אפילו חמישית שנייה מורגשת, ואחרי כמה דקות זה מעייף לצפות.</p>
+<h2>למה זה קורה</h2>
+<ul>
+<li><strong>סרטונים מהטלפון:</strong> טלפונים מצלמים לרוב בקצב פריימים משתנה, וחלק מתוכנות העריכה והנגנים מתבלבלים בזה. הקול נשאר בזמן והתמונה לא.</li>
+<li><strong>המרה או חיתוך:</strong> תוכנה שהמירה את הקובץ הוסיפה או הורידה קטע קטן בתחילת הקול.</li>
+<li><strong>הקלטה נפרדת:</strong> הקול הוקלט במיקרופון נפרד והוצמד לתמונה ביד.</li>
+</ul>
+<h2>תיקון בזמן הצפייה: VLC</h2>
+<ol>
+<li>פותחים את הסרטון ב-VLC.</li>
+<li>הקול מקדים את השפתיים? לוחצים <kbd>K</kbd> כדי לאחר אותו.</li>
+<li>הקול מאחר? לוחצים <kbd>J</kbd> כדי להקדים אותו.</li>
+<li>כל לחיצה מזיזה 50 אלפיות שנייה. הכי קל לכוון כשמסתכלים על מישהו שאומר מילה שמתחילה ב-פ, ב או מ.</li>
+</ol>
+<h2>תיקון קבוע</h2>
+<p>כדי לשמור קובץ שמתנגן נכון בכל מקום, צריך להזיז את פס הקול בתוך הקובץ. תוכנות עריכה כמו DaVinci Resolve (בגרסה החינמית) מאפשרות להזיז את הקול על ציר הזמן ולייצא מחדש. זה עובד, אבל דורש לדעת בדיוק בכמה להזיז, ולייצא את כל הסרטון מחדש, מה שלוקח זמן ולפעמים פוגע באיכות.</p>
+<p>אם ההיסט משתנה לאורך הסרטון, הזזה אחת לא תספיק, וצריך למדוד אותו בכמה מקומות.</p>
+  <div class="cta"><h2>רוצה שזה יקרה לבד?</h2><p>Movie Doctor מקשיב לדיבור בסרטון, מוצא בדיוק איפה הכתוביות או הקול זזים, ושומר עותק מתוקן. גם כשההיסט משתנה באמצע. תוכנה ל-Windows, עובדת בלי אינטרנט, 39 דולר פעם אחת.</p><a class="btn btn--primary" href="index.html#fixes">לראות מה Movie Doctor מתקן</a></div>
+  <h2>מדריכים נוספים</h2>
+  <ul class="related"><li><a class="link" href="help-subtitle-delay.html">כתוביות מקדימות או מאחרות: איך מתקנים</a></li><li><a class="link" href="help-subtitles-drift.html">כתוביות שזזות באמצע הסרטון</a></li><li><a class="link" href="help-hebrew-punctuation.html">נקודות ופסיקים הפוכים בכתוביות בעברית</a></li><li><a class="link" href="help-sync-srt.html">איך מסנכרנים קובץ SRT לסרטון</a></li></ul>
+
+</div>
+</main>
+</body>
+</html>
