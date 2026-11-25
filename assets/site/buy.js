@@ -3,7 +3,7 @@
    contacts no third party until then (privacy.html says so).
    PADDLE_TOKEN: the client-side token from Paddle > Developer tools > Authentication (starts with "live_").
    It is public by design (it can only open a checkout). While it is empty the buttons simply go to #price. */
-const PADDLE_TOKEN = '';
+const PADDLE_TOKEN = 'live_5ce41283f15ef5decb1ac98612d';   // client-side token MOVIE_DOCTOR_SITE
 const PRICE_ID = 'pri_01m87z5srm4nkkkr0jc2q09cvw';   // Movie Doctor Pro, $39 one-time
 const SUCCESS_PAGE = 'thanks.html';
 
