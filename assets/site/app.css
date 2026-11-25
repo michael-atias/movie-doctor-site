@@ -245,3 +245,9 @@
 /* the PayPal card form opens inside the price card and is taller than the screen: let #price grow, never overlap the closing section */
 main > section#price { height: auto; min-height: calc(var(--h, 1) * 100vh); min-height: calc(var(--h, 1) * 100svh); }
 main > section#price > .wrap { height: auto; }
+
+/* demo video: the whole frame visible, never cropped */
+.demo-frame { display: grid; place-items: center; }
+.demo-video { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 20px; background: #eeeeeb;
+  box-shadow: 0 24px 60px rgba(0,0,0,.12); }
+@media (max-width: 639px) { #demo { --hm: 1; } .demo-video { max-height: 72svh; } }
